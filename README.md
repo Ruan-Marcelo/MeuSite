@@ -1,6 +1,7 @@
 # Meu Primeiro Web Site
 
-![Design sem nome](https://github.com/user-attachments/assets/0afbdc3f-d810-4763-bb67-6f99ea6e26fb)
+![Foto Do Meu Site Em diversos Dispositivos](https://github.com/user-attachments/assets/0eb63e8c-fae9-4c74-9c9a-c2efbe75dc3a)
+
 
 
 Breve descrição do projeto: O projeto foi criado como um portfólio pessoal e como uma forma de estudo.
