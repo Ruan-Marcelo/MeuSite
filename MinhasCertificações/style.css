@@ -1,0 +1,236 @@
+body {
+  background-color: #000;
+  cursor: url(../imagens/openhand_100161.png), auto;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+header {
+  padding: 40px 4%;
+}
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #7d7d7d;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+header nav.menu-desktop a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav.menu-desktop ul li {
+  display: inline-block;
+  padding: 0 40px;
+}
+.btn-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: blue;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+}
+/* estilo do menu mobile */
+.btn-abrir-menu i {
+  color: blue;
+  font-size: 40px;
+  cursor: pointer;
+}
+.menu-mobile {
+  background-color: #000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 0%;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.menu-mobile.abrir-menu {
+  width: 70%;
+  cursor: pointer;
+}
+.menu-mobile.abrir-menu ~ .overley-menu {
+  display: block;
+}
+.menu-mobile .btn-fechar i {
+  color: blue;
+  font-size: 30px;
+}
+.menu-mobile .btn-fechar {
+  padding: 20px 5%;
+}
+.menu-mobile nav ul {
+  text-align: right;
+}
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 8%;
+  display: block;
+}
+.menu-mobile nav ul li a:hover {
+  background-color: blue;
+  color: #000;
+}
+.overley-menu {
+  background-color: #000000d0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 88888;
+  display: none;
+}
+.certifications {
+  padding: 40px 4%;
+  background-color: #000; /* Cor de fundo da seção */
+}
+h2.titulo span {
+  color: blue;
+}
+
+.certifications h2.titulo {
+  color: #fff;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #343434;
+  border-radius: 20px;
+  box-shadow: 0 0 8px #ffffff58;
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 8px blue;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 30px;
+  color: rgba(0, 51, 255, 0.827);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.6;
+}
+/* imgs ao lado do nome do curso */
+.card img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  margin-right: 10px;
+}
+.card h3 {
+  display: flex;
+  align-items: center;
+}
+.card h3 img {
+  width: 70px; /* Ajuste o tamanho do ícone conforme necessário */
+  margin-right: 8px;
+}
+/* Rodapé */
+.logo-footer {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+footer {
+  padding: 60px 4%;
+  box-shadow: 0 0 40px 01px #ffffff0e;
+}
+footer .flex {
+  justify-content: space-between;
+}
+footer .line-footer {
+  padding: 20px 0;
+}
+.borda {
+  border-top: 2px solid blue;
+}
+footer .line-footer p i {
+  color: blue;
+  font-size: 25px;
+}
+footer .line-footer p a {
+  color: #fff;
+}
+
+/* Botões da página certificações */
+
+button:hover,
+form .btn-enviar input:hover {
+  box-shadow: 0px 0px 8px blue;
+  transform: scale(1.2);
+}
+.btn-contato button {
+  transition: 0.2s;
+}
+
+.btn-social {
+  display: inline-block;
+}
+.btn-social button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: blue;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+/* RESPONSIVIDADE DE DISPOSITIVOS MOVEIS */
+.btn-abrir-menu {
+  display: none; /* Oculta o ícone por padrão */
+}
+
+@media screen and (max-width: 1020px) {
+  /* classes gerais */
+  .btn-abrir-menu {
+    display: block; /* Mostra o ícone apenas em telas menores que 1020px */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .menu-desktop,
+  .btn-contato {
+    display: none; /* Esconde o menu desktop e o botão de contato em telas móveis */
+  }
+}
