@@ -191,6 +191,11 @@ footer .line-footer p a {
   color: #fff;
 }
 
+.direitos{
+  color: #fff;
+  text-align: center;
+}
+
 /* Botões da página certificações */
 
 button:hover,

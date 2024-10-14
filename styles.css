@@ -297,6 +297,11 @@ footer .line-footer p a {
   color: #fff;
 }
 
+.direitos{
+  color: #fff;
+  text-align: center;
+}
+
 /* RESPONSIVIDADE DE DISPOSITIVOS MOVEIS */
 .btn-abrir-menu {
   display: none; /* Oculta o ícone por padrão */
