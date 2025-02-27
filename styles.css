@@ -8,7 +8,6 @@
 body {
   background-color: #000;
   height: 100vh;
-  cursor: url(./imagens/5.png), auto;
 }
 .interface {
   max-width: 1280px;
