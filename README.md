@@ -1,4 +1,6 @@
-# Meu Primeiro Web Site
+<h1 align="center">Meu Portfólio  Online </h1>
+
+<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/></p>
 
  <!-- ![Foto Do Meu Site Em diversos Dispositivos](https://github.com/user-attachments/assets/0eb63e8c-fae9-4c74-9c9a-c2efbe75dc3a) -->
 <img src="imagens/tela1.png" >
@@ -18,18 +20,15 @@ Breve descrição do projeto: O projeto foi criado como um portfólio pessoal e 
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML
-- CSS
-- JavaScript
+*   [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+*   [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+*   [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
-## Como Rodar o Projeto
 
-Passos para rodar o projeto localmente:
-
-Basta apenas clicar no link e navegar pelo site.
 
 ## Link do Web Site Hospedado pelo GitHub
 
 ### [Meu Web Site](https://ruan-marcelo.github.io/MeuSite/)
+
 
 
