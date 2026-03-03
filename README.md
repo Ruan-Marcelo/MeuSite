@@ -1,7 +1,8 @@
 # Meu Primeiro Web Site
 
-![Foto Do Meu Site Em diversos Dispositivos](https://github.com/user-attachments/assets/0eb63e8c-fae9-4c74-9c9a-c2efbe75dc3a)
-
+ <!-- ![Foto Do Meu Site Em diversos Dispositivos](https://github.com/user-attachments/assets/0eb63e8c-fae9-4c74-9c9a-c2efbe75dc3a) -->
+<img src="" >
+<img src="" >
 
 
 Breve descrição do projeto: O projeto foi criado como um portfólio pessoal e como uma forma de estudo.
@@ -30,3 +31,4 @@ Basta apenas clicar no link e navegar pelo site.
 ## Link do Web Site Hospedado pelo GitHub
 
 ### [Meu Web Site](https://ruan-marcelo.github.io/MeuSite/)
+
