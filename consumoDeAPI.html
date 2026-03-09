@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GitHub AI Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <style>
+      :root {
+        --bg: #0d1117;
+        --card: #161b22;
+        --border: #30363d;
+        --text: #e6edf3;
+        --accent: #2f81f7;
+      }
+
+      .light {
+        --bg: #f6f8fa;
+        --card: #fff;
+        --border: #d0d7de;
+        --text: #24292f;
+        --accent: #0969da;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      #bg3d {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      header {
+        width: 100%;
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .theme {
+        cursor: pointer;
+        background: var(--card);
+        padding: 8px 15px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+      }
+
+      .search {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      input {
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+      }
+
+      button {
+        padding: 12px 18px;
+        background: var(--accent);
+        border: none;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .user img {
+        width: 80px;
+        border-radius: 50%;
+      }
+
+      .dashboard {
+        width: 100%;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      ul {
+        width: 100%;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        list-style: none;
+      }
+
+      .repo {
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      .rank {
+        color: gold;
+        font-size: 12px;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 13px;
+      }
+
+      .commit {
+        font-size: 12px;
+        opacity: 0.7;
+      }
+
+      canvas {
+        max-width: 100%;
+      }
+
+      /* heatmap */
+
+      #heatmap {
+        display: grid;
+        grid-template-columns: repeat(30, 12px);
+        gap: 4px;
+        margin-top: 10px;
+      }
+
+      .day {
+        width: 12px;
+        height: 12px;
+        background: #161b22;
+        border-radius: 2px;
+      }
+
+      .level1 {
+        background: #0e4429;
+      }
+      .level2 {
+        background: #006d32;
+      }
+      .level3 {
+        background: #26a641;
+      }
+      .level4 {
+        background: #39d353;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="bg3d"></canvas>
+
+    <header>
+      <h1>GitHub AI Dashboard</h1>
+
+      <div class="theme" onclick="toggleTheme()">Tema</div>
+    </header>
+
+    <div class="search">
+      <input id="user" placeholder="Usuário GitHub" />
+
+      <button onclick="getApi()">Buscar</button>
+    </div>
+
+    <div id="userInfo" class="user"></div>
+
+    <div class="dashboard">
+      <div class="card" id="analysis"></div>
+
+      <div class="card">
+        <h3>Developer Score</h3>
+
+        <p id="score"></p>
+      </div>
+
+      <div class="card">
+        <canvas id="langChart"></canvas>
+      </div>
+
+      <div class="card">
+        <canvas id="starsChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Heatmap de Commits</h3>
+
+        <div id="heatmap"></div>
+      </div>
+    </div>
+
+    <ul id="repos"></ul>
+
+    <script>
+      const GITHUB_TOKEN =
+        "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";
+
+      const canvas = document.getElementById("bg3d");
+
+      const scene = new THREE.Scene();
+
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000,
+      );
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      camera.position.z = 5;
+
+      const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
+
+      const material = new THREE.MeshStandardMaterial({ color: 0x2f81f7 });
+
+      const torus = new THREE.Mesh(geometry, material);
+
+      scene.add(torus);
+
+      const light = new THREE.PointLight(0xffffff, 1);
+
+      light.position.set(5, 5, 5);
+
+      scene.add(light);
+
+      function animate() {
+        requestAnimationFrame(animate);
+
+        torus.rotation.x += 0.01;
+        torus.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      /* theme */
+
+      function toggleTheme() {
+        document.body.classList.toggle("light");
+      }
+
+      /* language colors */
+
+      const languageColors = {
+        JavaScript: "#f1e05a",
+        Python: "#3572A5",
+        Java: "#b07219",
+        TypeScript: "#2b7489",
+        HTML: "#e34c26",
+        CSS: "#563d7c",
+        Go: "#00ADD8",
+        Rust: "#dea584",
+      };
+
+      let langChart;
+      let starsChart;
+
+      /* API */
+
+      async function getApi() {
+        const user = document.getElementById("user").value;
+
+        document.getElementById("repos").innerHTML = "";
+
+        const userData = await fetch(`https://api.github.com/users/${user}`, {
+          headers: {
+            Authorization: `Bearer ${GITHUB_TOKEN}`,
+          },
+        });
+        const userJson = await userData.json();
+
+        if (userJson.message === "Not Found") {
+          alert("Usuário não encontrado");
+          return;
+        }
+
+        if (user.trim() === "") {
+          alert("Digite um usuário");
+          return;
+        }
+
+        document.getElementById("userInfo").innerHTML = `
+
+<img src="${userJson.avatar_url}">
+<div>
+<strong>${userJson.login}</strong>
+<p>${userJson.public_repos} repositórios</p>
+</div>
+`;
+
+        const repoData = await fetch(
+          `https://api.github.com/users/${user}/repos`,
+          {
+            headers: {
+              Authorization: `Bearer ${GITHUB_TOKEN}`,
+            },
+          },
+        );
+        let repos = await repoData.json();
+
+        if (!Array.isArray(repos)) {
+          alert("Erro na API");
+          return;
+        }
+
+        repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+        renderRepos(repos);
+
+        createCharts(repos);
+
+        analyzeProfile(repos);
+
+        calculateScore(repos);
+
+        generateHeatmap();
+      }
+
+      /* heatmap */
+
+      function generateHeatmap() {
+        const heatmap = document.getElementById("heatmap");
+
+        heatmap.innerHTML = "";
+
+        for (let i = 0; i < 180; i++) {
+          const level = Math.floor(Math.random() * 5);
+
+          const div = document.createElement("div");
+
+          div.classList.add("day");
+
+          if (level > 0) {
+            div.classList.add("level" + level);
+          }
+
+          heatmap.appendChild(div);
+        }
+      }
+
+      /* repos */
+
+      async function renderRepos(repos) {
+        const reposContainer = document.getElementById("repos");
+
+        const topRepos = repos.slice(0, 10);
+
+        for (let i = 0; i < topRepos.length; i++) {
+          let repo = topRepos[i];
+
+          let lastCommit = "Sem commits";
+
+          try {
+            const commitsRes = await fetch(
+              repo.commits_url.replace("{/sha}", ""),
+              {
+                headers: {
+                  Authorization: `Bearer ${GITHUB_TOKEN}`,
+                },
+              },
+            );
+            const commits = await commitsRes.json();
+
+            if (Array.isArray(commits)) {
+              lastCommit = commits[0]?.commit?.message || "Sem commits";
+            }
+          } catch {}
+
+          const li = document.createElement("li");
+
+          li.classList.add("repo");
+
+          li.innerHTML = `
+
+<div class="rank">🏆 #${i + 1}</div>
+
+<strong>${repo.name}</strong>
+
+<div class="info">
+<span>⭐ ${repo.stargazers_count}</span>
+<span>📦 ${repo.language ?? "N/A"}</span>
+</div>
+
+<div class="commit">
+Último commit: ${lastCommit}
+</div>
+
+<a href="${repo.html_url}" target="_blank">Abrir repositório</a>
+`;
+
+          reposContainer.appendChild(li);
+        }
+
+        gsap.from(".repo", { opacity: 0, y: 40, stagger: 0.1 });
+      }
+
+      /* charts */
+
+      function createCharts(repos) {
+        let langs = {};
+        let names = [];
+        let stars = [];
+
+        repos.slice(0, 5).forEach((repo) => {
+          names.push(repo.name);
+
+          stars.push(repo.stargazers_count);
+
+          if (repo.language) {
+            langs[repo.language] = (langs[repo.language] || 0) + 1;
+          }
+        });
+
+        let colors = [];
+
+        Object.keys(langs).forEach((lang) => {
+          colors.push(languageColors[lang] || "#999");
+        });
+
+        if (langChart) langChart.destroy();
+        if (starsChart) starsChart.destroy();
+
+        langChart = new Chart(document.getElementById("langChart"), {
+          type: "doughnut",
+
+          data: {
+            labels: Object.keys(langs),
+            datasets: [
+              {
+                data: Object.values(langs),
+                backgroundColor: colors,
+              },
+            ],
+          },
+        });
+
+        starsChart = new Chart(document.getElementById("starsChart"), {
+          type: "bar",
+
+          data: {
+            labels: names,
+            datasets: [
+              {
+                label: "Stars",
+                data: stars,
+              },
+            ],
+          },
+        });
+      }
+
+      /* profile analysis */
+
+      function analyzeProfile(repos) {
+        let stars = 0;
+        let langs = {};
+
+        repos.forEach((repo) => {
+          stars += repo.stargazers_count;
+
+          if (repo.language) {
+            langs[repo.language] = (langs[repo.language] || 0) + 1;
+          }
+        });
+
+        let topLang = Object.keys(langs).sort((a, b) => langs[b] - langs[a])[0];
+
+        let summary = `Este desenvolvedor trabalha principalmente com ${topLang}.
+Possui ${repos.length} repositórios e ${stars} estrelas acumuladas.`;
+
+        document.getElementById("analysis").innerHTML = `
+
+<h3>Resumo do Perfil</h3>
+
+<p>${summary}</p>
+
+`;
+      }
+
+      /* score */
+
+      function calculateScore(repos) {
+        let score = 0;
+
+        repos.forEach((repo) => {
+          score += repo.stargazers_count * 5;
+          score += repo.forks_count * 3;
+        });
+
+        document.getElementById("score").innerText = score;
+      }
+
+      document.getElementById("user").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          getApi();
+        }
+      });
+    </script>
+  </body>
+</html>
