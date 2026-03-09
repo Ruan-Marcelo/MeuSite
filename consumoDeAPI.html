@@ -230,9 +230,6 @@
     <ul id="repos"></ul>
 
     <script>
-      const GITHUB_TOKEN =
-        "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";
-
       const canvas = document.getElementById("bg3d");
 
       const scene = new THREE.Scene();
@@ -304,11 +301,7 @@
 
         document.getElementById("repos").innerHTML = "";
 
-        const userData = await fetch(`https://api.github.com/users/${user}`, {
-          headers: {
-            Authorization: `Bearer ${GITHUB_TOKEN}`,
-          },
-        });
+        const userData = await fetch(`https://api.github.com/users/${user}`);
         const userJson = await userData.json();
 
         if (userJson.message === "Not Found") {
@@ -332,11 +325,6 @@
 
         const repoData = await fetch(
           `https://api.github.com/users/${user}/repos`,
-          {
-            headers: {
-              Authorization: `Bearer ${GITHUB_TOKEN}`,
-            },
-          },
         );
         let repos = await repoData.json();
 
@@ -395,12 +383,8 @@
           try {
             const commitsRes = await fetch(
               repo.commits_url.replace("{/sha}", ""),
-              {
-                headers: {
-                  Authorization: `Bearer ${GITHUB_TOKEN}`,
-                },
-              },
             );
+
             const commits = await commitsRes.json();
 
             if (Array.isArray(commits)) {
