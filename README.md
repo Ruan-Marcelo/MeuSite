@@ -42,7 +42,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## Link do Web Site Hospedado pelo GitHub
 
-### [Meu Web Site](https://ruan-marcelo.github.io/MeuSite/)
+### [Meu Web Site](https://zruanzito.com.br)
+
 
 
 
