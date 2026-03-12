@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #000;
   font-weight: bold;
@@ -23,7 +26,7 @@ header a {
 }
 header nav.menu-desktop a:hover {
   color: #fff;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 header nav ul {
   list-style-type: none;
@@ -119,7 +122,7 @@ h2.titulo span {
 }
 
 .card {
-  background-color: #343434;
+  background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
   border-radius: 20px;
   box-shadow: 0 0 8px #ffffff58;
   width: 300px;
@@ -132,13 +135,6 @@ h2.titulo span {
   transform: scale(1.02);
   box-shadow: 0px 0px 8px blue;
 }
-
-.card img {
-  max-width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
 .card h3 {
   font-size: 30px;
   color: rgba(0, 51, 255, 0.827);
@@ -152,7 +148,10 @@ h2.titulo span {
 }
 /* imgs ao lado do nome do curso */
 .card img {
-  width: 100px; /* Ajuste o tamanho conforme necessário */
+  width: 100px;
+  max-width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
   margin-right: 10px;
 }
 .card h3 {
@@ -171,7 +170,7 @@ h2.titulo span {
 }
 footer {
   padding: 60px 4%;
-  box-shadow: 0 0 40px 01px #ffffff0e;
+  box-shadow: 0 0 40px 1px #ffffff0e;
 }
 footer .flex {
   justify-content: space-between;
@@ -200,27 +199,41 @@ footer .line-footer p a {
 button:hover,
 form .btn-enviar input:hover {
   box-shadow: 0px 0px 8px blue;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 .btn-contato button {
   transition: 0.2s;
 }
 
 .btn-social {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
+
+.btn-social a {
+  text-decoration: none;
+}
+
 .btn-social button {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: none;
   background-color: blue;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
-  margin: 0 10px;
   transition: 0.2s;
 }
-/* RESPONSIVIDADE DE DISPOSITIVOS MOVEIS */
+
+.btn-social button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px blue;
+}
+
+
+/* responsividade */
 .btn-abrir-menu {
   display: none; /* Oculta o ícone por padrão */
 }
@@ -236,5 +249,12 @@ form .btn-enviar input:hover {
   .menu-desktop,
   .btn-contato {
     display: none; /* Esconde o menu desktop e o botão de contato em telas móveis */
+  }
+}
+@media screen and (max-width: 600px) {
+  .btn-social button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 }

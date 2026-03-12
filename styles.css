@@ -5,9 +5,12 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+html{
+  scroll-behavior:smooth;
+}
 body {
   background-color: #000;
-  height: 100vh;
+  min-height: 100vh;
 }
 .interface {
   max-width: 1280px;
@@ -65,15 +68,6 @@ header nav ul {
 header nav.menu-desktop ul li {
   display: inline-block;
   padding: 0 40px;
-}
-.btn-contato button {
-  padding: 10px 40px;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: blue;
-  border: 0;
-  border-radius: 30px;
-  cursor: pointer;
 }
 /* estilo do menu mobile */
 .btn-abrir-menu i {
@@ -168,8 +162,22 @@ section.topo-do-site .flex {
 }
 
 /* Estilos da especialidades */
-p.veja span {
-  color: blue;
+.btn-veja {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+.btn-veja:hover {
+  background: #0044ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 255, 0.4);
 }
 .especialidaeslink {
   text-decoration: none;
@@ -296,7 +304,7 @@ footer .line-footer p a {
   color: #fff;
 }
 
-.direitos{
+.direitos {
   color: #fff;
   text-align: center;
 }
@@ -352,7 +360,8 @@ footer .line-footer p a {
     padding: 40px 8%;
   }
   section.especialidades .flex {
-    gap: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
   }
   /* SOBRE */
   section.sobre {
@@ -411,7 +420,8 @@ footer .line-footer p a {
   margin: 5px;
   border: 0.5px solid blue;
   border-radius: 50px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background: url(./imagens/Captura\ de\ tela\ 2024-08-15\ 214618.png);
   background-position: center;
@@ -433,7 +443,9 @@ footer .line-footer p a {
   background-color: blue;
   padding: 2% 5%;
   border-radius: 8px 0 0 8px;
-  transition: bottom 0.4s, opacity;
+  transition:
+    bottom 0.4s,
+    opacity;
 }
 .container .gallery .img-box:nth-child(2) {
   background: url(./imagens/Design\ sem\ nome.png);
