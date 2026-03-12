@@ -232,16 +232,44 @@ section.sobre .flex {
   margin: 20px 0;
   text-align: justify;
 }
-.btn-social button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background-color: blue;
-  font-size: 22px;
-  cursor: pointer;
-  margin: 0 10px;
-  transition: 0.2s;
+.btn-social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
+}
+
+.btn-social a{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:24px;
+  color:#fff;
+  transition:0.3s;
+  text-decoration:none;
+}
+
+/* insta */
+.btn-social a.instagram{
+  background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+}
+
+/* Github */
+.btn-social a.github{
+  background:#181717;
+}
+
+/* linkedin */
+.btn-social a.linkedin{
+  background:#0a66c2;
+}
+
+.btn-social a:hover{
+  transform:translateY(-5px) scale(1.08);
+  box-shadow:0 0 15px rgba(255,255,255,0.4);
 }
 /* ESTILO DO FORMULARIO DE CONTATO */
 section.formulario {

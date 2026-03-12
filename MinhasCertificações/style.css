@@ -205,33 +205,45 @@ form .btn-enviar input:hover {
   transition: 0.2s;
 }
 
-.btn-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.btn-social{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
 }
 
-.btn-social a {
-  text-decoration: none;
+.btn-social a{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:24px;
+  color:#fff;
+  transition:0.3s;
+  text-decoration:none;
 }
 
-.btn-social button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: blue;
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.2s;
+/* insta */
+.btn-social a.instagram{
+  background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
 }
 
-.btn-social button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 8px blue;
+/* Github */
+.btn-social a.github{
+  background:#181717;
 }
 
+/* linkedin */
+.btn-social a.linkedin{
+  background:#0a66c2;
+}
+
+.btn-social a:hover{
+  transform:translateY(-5px) scale(1.08);
+  box-shadow:0 0 15px rgba(255,255,255,0.4);
+}
 
 /* responsividade */
 .btn-abrir-menu {
