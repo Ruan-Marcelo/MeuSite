@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Responsive Web Design",
+    "instituicao": "freeCodeCamp",
+    "data": "Agosto 2024",
+    "descricao": "Criação de sites responsivos utilizando HTML e CSS.",
+    "imagem": "FreeCodeCamp_logo.png",
+    "icone": "html5-css31-removebg-preview.png"
+  },
+  {
+    "titulo": "Cisco Get Connected",
+    "instituicao": "Cisco Networking Academy",
+    "data": "Junho 2024",
+    "descricao": "Fundamentos de internet e sistemas operacionais.",
+    "imagem": "Cisco_logo_blue_2016.svg.png",
+    "icone": "i_03_04_l.png"
+  },
+  {
+    "titulo": "HTML, CSS e JavaScript",
+    "instituicao": "Fundação Bradesco",
+    "data": "Setembro 2024",
+    "descricao": "Desenvolvimento web com HTML, CSS e JS.",
+    "imagem": "bradesco-icon-logo.png",
+    "icone": "javascript.png"
+  },
+  {
+    "titulo": "Programação Orientada a Objetos",
+    "instituicao": "Fundação Bradesco",
+    "data": "Setembro 2024",
+    "descricao": "Conceitos de POO e boas práticas.",
+    "imagem": "bradesco-icon-logo.png",
+    "icone": "Java-Logo.png"
+  },
+  {
+    "titulo": "Cloud Security",
+    "instituicao": "Google Cloud",
+    "data": "Junho 2024",
+    "descricao": "Segurança e dados na nuvem.",
+    "imagem": "googlelogo.png",
+    "icone": "cloud.png"
+  },
+  {
+    "titulo": "IoT",
+    "instituicao": "SENAI",
+    "data": "Setembro 2024",
+    "descricao": "Integração de sistemas IoT.",
+    "imagem": "SENAI.png",
+    "icone": "iot.png"
+  },
+  {
+    "titulo": "Power BI",
+    "instituicao": "SENAI",
+    "data": "Janeiro 2024",
+    "descricao": "Dashboards e análise de dados.",
+    "imagem": "SENAI.png",
+    "icone": "powerbi.png"
+  },
+  {
+    "titulo": "Cibersegurança na Nuvem",
+    "instituicao": "SENAI",
+    "data": "Julho 2024",
+    "descricao": "Segurança em cloud computing.",
+    "imagem": "SENAI.png",
+    "icone": "cloud.png"
+  },
+  {
+    "titulo": "Python",
+    "instituicao": "Fundação Bradesco",
+    "data": "Setembro 2024",
+    "descricao": "Lógica e programação em Python.",
+    "imagem": "bradesco-icon-logo.png",
+    "icone": "Python.png"
+  },
+  {
+    "titulo": "Android",
+    "instituicao": "SENAI",
+    "data": "Julho 2024",
+    "descricao": "Desenvolvimento mobile.",
+    "imagem": "SENAI.png",
+    "icone": "android.png"
+  }
+]
