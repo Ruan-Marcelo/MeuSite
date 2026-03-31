@@ -1,48 +1,88 @@
-<h1 align="center">Meu Portfólio  Online </h1>
+<h1 align="center">💼 Meu Portfólio Online</h1>
+
+<p align="center">
+  <a href="https://zruanzito.com.br" target="_blank">
+    <img src="https://img.shields.io/badge/🌐%20Acessar%20Site-000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  </a>
+</p>
 
 <div align="center">
   <a href="https://www.linkedin.com/in/ruan-marcelo" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"/>
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="50" height="40"/>
   </a>
-
   <a href="https://discord.com/users/SEU_ID_AQUI" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"/>
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="50" height="40"/>
   </a>
-
   <a href="https://www.instagram.com/ruan.luzzz" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"/>
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="50" height="40"/>
   </a>
 </div>
 
-<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/></p>
+---
 
- <!-- ![Foto Do Meu Site Em diversos Dispositivos](https://github.com/user-attachments/assets/0eb63e8c-fae9-4c74-9c9a-c2efbe75dc3a) -->
+<p align="center">
+  <img src="https://img.shields.io/badge/STATUS-EM%20DESENVOLVIMENTO-22c55e?style=for-the-badge"/>
+</p>
+
+---
+
+## 📸 Preview do Projeto
+
 <img src="imagens/tela1.png" >
 <img src="imagens/tela2.png" >
 
+---
 
-Breve descrição do projeto: O projeto foi criado como um portfólio pessoal e como uma forma de estudo.
+## 📌 Sobre o Projeto
 
-## Funcionalidades
+Este projeto foi desenvolvido como um **portfólio pessoal**, com o objetivo de apresentar minhas habilidades, projetos e evolução como desenvolvedor.
 
-- Responsividade
-- Contato direto comigo
-- Funcionalidade usando JavaScript
-- Armazenar informações sobre minha carreira
+Além disso, ele também serve como um ambiente de **estudo e prática**, aplicando conceitos modernos de desenvolvimento web.
 
-## Tecnologias Utilizadas
+---
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+## ⚙️ Funcionalidades
 
-*   [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-*   [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-*   [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+✅ Layout totalmente responsivo  
+✅ Seção de contato direto  
+✅ Interações com JavaScript  
+✅ Apresentação da minha trajetória profissional  
 
+---
 
+## 🛠️ Tecnologias Utilizadas
 
-## Link do Web Site Hospedado pelo GitHub
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js" />
+</p>
 
-### [Meu Web Site](https://zruanzito.com.br)
+- HTML5  
+- CSS3  
+- JavaScript  
+
+---
+
+## 🌐 Acesse o Projeto
+
+🔗 **Site:** https://zruanzito.com.br
+
+---
+
+## 👨‍💻 Autor
+
+**Ruan Marcelo**  
+Full Stack Developer | Angular | .NET | JavaScript  
+
+🔗 LinkedIn: https://www.linkedin.com/in/ruan-marcelo  
+📸 Instagram: https://www.instagram.com/ruan.luzzz  
+
+---
+
+## ⭐ Sobre
+
+Este portfólio representa não apenas uma página pessoal, mas minha **evolução contínua como desenvolvedor** e meu compromisso com boas práticas.
+
+Se você gostou do projeto, não esqueça de deixar uma ⭐ no repositório!
 
 
 
