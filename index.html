@@ -44,6 +44,9 @@
             <li><a href="#Especialidades">Especialidades</a></li>
             <li><a href="#Sobre">Sobre mim</a></li>
             <li><a href="#Projetos">Projetos</a></li>
+            <li>
+              <a href="./MinhasCertificações/index.html">Certificações</a>
+            </li>
           </ul>
         </nav>
         <div class="btn-contato">
@@ -66,6 +69,10 @@
             <li><a href="#Especialidades">Especialidades</a></li>
             <li><a href="#Sobre">Sobre mim</a></li>
             <li><a href="./Contato/contato.html">Contato</a></li>
+            <li><a href="#Projetos">Projetos</a></li>
+            <li>
+              <a href="./MinhasCertificações/index.html">Certificações</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -80,8 +87,8 @@
           <div class="flex">
             <div class="txt-topo-site">
               <h1>
-                <span>RUAN MARCELO RAMACIOTI LUZ</span><br />FULL-STACK WEB
-                DEVELOPER
+                <span>RUAN MARCELO</span><br />
+                Full Stack Developer
               </h1>
               <p>
                 Acredito que a tecnologia tem o poder de transformar vidas.
@@ -101,7 +108,7 @@
               <img
                 src="./imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
                 alt="Foto RUAN"
-                style="width: 400px"
+                class="img-responsive"
               />
             </div>
             <!-- img-topo-site -->
@@ -113,42 +120,42 @@
       <section id="Especialidades" class="especialidades">
         <div class="interface">
           <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
-          <div class="flex">
-            <div class="especialidades-box">
-              <i class="bi bi-patch-check"></i>
-              <h3>Certificações</h3>
-              <p>
-                Ciber segurança na nuvem <br />
-                Desenvolvimento de aplicativos Android
-              </p>
 
-              <a href="./MinhasCertificações/index.html" class="btn-veja">
-                Veja mais
-              </a>
-            </div>
-            <!-- especialidades-box -->
+          <div class="flex">
+            <!-- STACK PRINCIPAL -->
             <div class="especialidades-box">
-              <i class="bi bi-person-raised-hand"></i>
-              <h3>Full Stack</h3>
-              <p>Desenvolvedor Full-Stack pelo SENAI de Ribeirão preto</p>
-            </div>
-            <!-- especialidades-box -->
-            <div class="especialidades-box">
-              <i class="bi bi-terminal"></i>
-              <h3>Sistemas Operacionais</h3>
+              <i class="bi bi-code-slash"></i>
+              <h3>Full Stack Development</h3>
               <p>
-                Windows
-                <br />
-                Linux Mint
-                <br />
-                Kali Linux
+                Desenvolvimento de aplicações web completas utilizando
+                <strong>Angular, .NET e SQL Server</strong>, com foco em
+                arquitetura limpa, APIs REST e integração frontend/backend.
               </p>
             </div>
-            <!-- especialidades-box -->
+
+            <!-- BACKEND -->
+            <div class="especialidades-box">
+              <i class="bi bi-server"></i>
+              <h3>Backend & APIs</h3>
+              <p>
+                Criação de APIs com <strong>ASP.NET Core</strong>, autenticação
+                com <strong>JWT</strong>, Entity Framework e boas práticas de
+                segurança e escalabilidade.
+              </p>
+            </div>
+
+            <!-- FRONTEND -->
+            <div class="especialidades-box">
+              <i class="bi bi-window"></i>
+              <h3>Frontend Moderno</h3>
+              <p>
+                Interfaces modernas com <strong>Angular</strong>, consumo de
+                APIs, uso de <strong>RxJS</strong> e construção de layouts
+                responsivos e performáticos.
+              </p>
+            </div>
           </div>
-          <!-- flex -->
         </div>
-        <!-- interface -->
       </section>
       <!-- especialidades -->
 
@@ -159,7 +166,7 @@
               <img
                 src="./imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
                 alt="Foto RUAN"
-                style="width: 400px"
+                class="img-responsive"
               />
             </div>
             <!-- img-sobre -->
@@ -177,34 +184,34 @@
                 como Desenvolvedor de Software, sempre comprometido em entregar
                 resultados com qualidade, dedicação e responsabilidade.
               </p>
-                <div class="btn-social">
-              <a
-                href="https://www.instagram.com/ruan.luzzz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="instagram"
-              >
-                <i class="bi bi-instagram"></i>
-              </a>
+              <div class="btn-social">
+                <a
+                  href="https://www.instagram.com/ruan.luzzz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="instagram"
+                >
+                  <i class="bi bi-instagram"></i>
+                </a>
 
-              <a
-                href="https://github.com/Ruan-Marcelo"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="github"
-              >
-                <i class="bi bi-github"></i>
-              </a>
+                <a
+                  href="https://github.com/Ruan-Marcelo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="github"
+                >
+                  <i class="bi bi-github"></i>
+                </a>
 
-              <a
-                href="https://www.linkedin.com/in/ruan-marcelo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="linkedin"
-              >
-                <i class="bi bi-linkedin"></i>
-              </a>
-            </div>
+                <a
+                  href="https://www.linkedin.com/in/ruan-marcelo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="linkedin"
+                >
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
             </div>
             <!-- txt-sobre -->
           </div>
@@ -215,30 +222,111 @@
       <!-- SOBRE -->
 
       <section id="Projetos" class="portifolio">
-        <div class="interface Projetos">
-          <h2 class="titulo Projetos">Meus <span>Projetos.</span></h2>
+        <div class="interface">
+          <h2 class="titulo">MEUS <span>PROJETOS.</span></h2>
+
           <div class="flex">
-            <div class="container">
-              <div class="gallery">
-                <div class="img-box">
-                  <h2>Html CSS</h2>
-                </div>
-                <div class="img-box">
-                  <h2>JavaScript</h2>
-                </div>
-                <div class="img-box">
-                  <h2>C#</h2>
-                </div>
-                <div class="img-box">
-                  <a
-                    class="img4"
-                    href="./consumoDeAPI.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <h2>Consumo de API do GitHub</h2>
-                  </a>
-                </div>
+            <!-- PROJETO 1 -->
+            <div class="projeto-card">
+              <h3>Article Hub</h3>
+              <p>
+                Plataforma full stack para gerenciamento de artigos com
+                autenticação JWT, construída com Angular, .NET e SQL Server.
+              </p>
+              <div class="tech">
+                <span>Angular</span>
+                <span>ASP.NET</span>
+                <span>SQL Server</span>
+              </div>
+              <div class="actions">
+                <a
+                  href="https://github.com/Ruan-Marcelo/AngularDotNet-Articles"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+            <div class="projeto-card">
+              <h3>Consumo de API GitHub</h3>
+              <p>
+                Aplicação web que consome a API do GitHub para buscar usuários e
+                repositórios, utilizando JavaScript e boas práticas de
+                integração com APIs.
+              </p>
+              <div class="tech">
+                <span>JavaScript</span>
+                <span>API REST</span>
+              </div>
+              <div class="actions">
+                <a href="./consumoDeAPI.html" target="_blank">Ver Projeto</a>
+              </div>
+            </div>
+
+            <!-- PROJETO 3 -->
+            <div class="projeto-card">
+              <h3>Blog Management System</h3>
+              <p>
+                Sistema de gerenciamento de blog desenvolvido com PHP puro e
+                MySQL, permitindo criação, edição e visualização de posts.
+              </p>
+              <div class="tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Bootstrap</span>
+              </div>
+              <div class="actions">
+                <a
+                  href="https://github.com/Ruan-Marcelo/php-blog-system.git"
+                  target="_blank"
+                  >Ver Projeto</a
+                >
+              </div>
+            </div>
+
+            <div class="projeto-card">
+              <h3>Projetos em C# para estudo</h3>
+              <p>
+                Praticar programação Desenvolver lógica Aplicar conceitos de
+                Engenharia de Software Evoluir continuamente como desenvolvedor
+              </p>
+              <div class="tech">
+                <span>C#</span>
+                <span>ASP.NET CORE</span>
+                <span>SQL Server</span>
+                <span>Bootstrap</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="actions">
+                <a
+                  href="https://github.com/Ruan-Marcelo/Csharp-Projetos.git"
+                  target="_blank"
+                  >Ver Projeto</a
+                >
+              </div>
+            </div>
+            <div class="projeto-card">
+              <h3>LevelUp-TCC</h3>
+              <p>
+                Ecommerce/Blog Completo em ASP.NET Web, bootstrap e SQL Server.
+                Projeto de TCC para conclusão do curso de tecnico em
+                Desenvolvimento de Sistemas, com foco em arquitetura limpa e
+                integração frontend/backend.
+              </p>
+              <div class="tech">
+                <span>C#</span>
+                <span>ASP.NET Web</span>
+                <span>SQL Server</span>
+                <span>Bootstrap</span>
+                <span>JavaScript</span>
+              </div>
+              <div class="actions">
+                <a
+                  href="https://github.com/Ruan-Marcelo/LevelUp-TCC-SENAI-I3DESV.git"
+                  target="_blank"
+                  >Ver Projeto</a
+                >
               </div>
             </div>
           </div>
@@ -248,38 +336,29 @@
       <section id="Contato" class="formulario">
         <div class="interface">
           <h2 class="titulo">Fale <span>COMIGO.</span></h2>
-          <form
-            method="post"
-            action="https://formsubmit.co/luzruan60@gmail.com"
-          >
+          <form id="form-contato">
             <input
               type="text"
-              name="nome"
-              id=""
+              id="nome"
               placeholder="Seu Nome Completo:"
               required
             />
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="Seu EMAIL:"
-              required
-            />
-            <input
-              type="text"
-              name="celular"
-              id=""
-              placeholder="Seu CELULAR:"
-            />
+
+            <input type="email" id="email" placeholder="Seu EMAIL:" required />
+
+            <input type="text" id="celular" placeholder="Seu CELULAR:" />
+
             <textarea
-              name="mensagem"
-              id=""
+              id="mensagem"
               placeholder="Sua mensagem:"
               required
             ></textarea>
-            <div class="btn-enviar"><input type="submit" value="ENVIAR" /></div>
+
+            <div class="btn-enviar">
+              <input type="submit" value="ENVIAR" />
+            </div>
           </form>
+          <div id="toast" class="toast">Mensagem enviada! Aguarde a resposta 🚀</div>
         </div>
       </section>
     </main>
@@ -342,5 +421,8 @@
       <!-- interface -->
     </footer>
     <!-- rodapé -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   </body>
 </html>
