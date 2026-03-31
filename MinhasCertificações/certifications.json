@@ -1,5 +1,37 @@
 [
   {
+    "titulo": "Fundamentos de Desenvolvimento Web",
+    "instituicao": "Cisco Networking Academy",
+    "data": "Março 2026",
+    "descricao": " desenvolvimento, implantação e teste de websites",
+    "imagem": "ibm.png",
+    "icone": "html5-css31-removebg-preview.png"
+  },
+  {
+    "titulo": "Cybersecurity Fundamentals",
+    "instituicao": "Cisco Networking Academy",
+    "data": "Março 2026",
+    "descricao": "tipos de ataques, engenharia social, estudos de caso, estratégias gerais de segurança",
+    "imagem": "ibm.png",
+    "icone": "ciber.png"
+  },
+  {
+    "titulo": "Stakaholders",
+    "instituicao": "Cisco Networking Academy",
+    "data": "Março 2026",
+    "descricao": "Envolver as partes interessadas para o sucesso",
+    "imagem": "Cisco_logo_blue_2016.svg.png",
+    "icone": "i_03_04_l.png"
+  },
+  {
+    "titulo": "Foundational C# with Microsoft",
+    "instituicao": "freeCodeCamp",
+    "data": "Março 2026",
+    "descricao": "aprendi os fundamentos de C#",
+    "imagem": "FreeCodeCamp_logo.png",
+    "icone": "1673639331003.png"
+  },
+  {
     "titulo": "Responsive Web Design",
     "instituicao": "freeCodeCamp",
     "data": "Agosto 2024",
