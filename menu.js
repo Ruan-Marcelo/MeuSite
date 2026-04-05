@@ -20,6 +20,44 @@ overley.addEventListener("click", () => {
   overley.style.display = "none"; // Oculta o overlay
 });
 
+// barra no topo
+const textos = [
+  "Desenvolvedor Full-Stack",
+  "Desenvolvedor Back-end",
+  "Especialista em .NET",
+  "APIs | Angular | SQL Server"
+];
+
+let index = 0;
+let charIndex = 0;
+let escrevendo = true;
+
+const elemento = document.querySelector(".dinamico");
+
+function digitar() {
+  if (escrevendo) {
+    if (charIndex < textos[index].length) {
+      elemento.textContent += textos[index].charAt(charIndex);
+      charIndex++;
+      setTimeout(digitar, 80);
+    } else {
+      escrevendo = false;
+      setTimeout(digitar, 1500);
+    }
+  } else {
+    if (charIndex > 0) {
+      elemento.textContent = textos[index].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(digitar, 40);
+    } else {
+      escrevendo = true;
+      index = (index + 1) % textos.length;
+      setTimeout(digitar, 300);
+    }
+  }
+}
+
+digitar();
 
 // emails
 (function () {

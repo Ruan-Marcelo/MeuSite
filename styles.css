@@ -12,6 +12,31 @@ body {
   background-color: #000;
   min-height: 100vh;
 }
+/* barra no topo site */
+.barra {
+  display: flex;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+  font-weight: 700;
+  color: #0044ff;
+  gap: 5px;
+
+   z-index: 999; /*em frente tudo */
+}
+
+.dinamico {
+  border-right: 4px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .toast {
   position: fixed;
   top: 20px;
@@ -158,12 +183,12 @@ section.topo-do-site .flex {
   justify-content: center;
   gap: 90px;
 }
-.topo-do-site h1 {
+.topo-do-site h2 {
   color: #fff;
   font-size: 42px;
   line-height: 40px;
 }
-.topo-do-site .txt-topo-site h1 span {
+.topo-do-site .txt-topo-site h2 span {
   color: blue;
 }
 .topo-do-site .txt-topo-site p {
@@ -492,7 +517,7 @@ footer .line-footer p a {
     padding: 20px 8%;
   }
   /* TOPO DO SITE */
-  .topo-do-site h1 {
+  .topo-do-site h2 {
     font-size: 28px;
   }
   section.topo-do-site .flex {
