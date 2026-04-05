@@ -204,9 +204,6 @@ section.topo-do-site .flex {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 255, 0.4);
 }
-.especialidaeslink {
-  text-decoration: none;
-}
 section.especialidades {
   padding: 40px 4%;
 }
@@ -232,12 +229,6 @@ section.especialidades .flex {
 .especialidades .especialidades-box h3 {
   font-size: 28px;
   margin: 15px 0;
-}
-
-.portifolio .flex {
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .projeto-card {
