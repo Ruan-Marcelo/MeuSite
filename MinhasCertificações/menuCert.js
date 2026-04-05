@@ -1,23 +1,31 @@
 let btnMenu = document.getElementById("btn-menu");
 let menu = document.getElementById("menu-mobile");
-let overley = document.getElementById("overley-menu");
+let overlay = document.getElementById("overley-menu"); // se quiser, pode renomear para overlay-menu
+let btnFechar = document.querySelector(".menu-mobile .btn-fechar");
 
+// abre
 btnMenu.addEventListener("click", () => {
-  console.log("Menu Button Clicked");
   menu.classList.add("abrir-menu");
-  overley.style.display = "block"; // Mostra o overlay
+  overlay.style.display = "block";
 });
 
-menu.addEventListener("click", () => {
-  console.log("Menu Clicked");
+// fecha no x
+btnFechar.addEventListener("click", () => {
   menu.classList.remove("abrir-menu");
-  overley.style.display = "none"; // Oculta o overlay
+  overlay.style.display = "none";
 });
 
-overley.addEventListener("click", () => {
-  console.log("Overlay Clicked");
+// fecha se clicar fora
+overlay.addEventListener("click", () => {
   menu.classList.remove("abrir-menu");
-  overley.style.display = "none"; // Oculta o overlay
+  overlay.style.display = "none";
+});
+
+document.querySelectorAll(".menu-mobile nav ul li a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("abrir-menu");
+    overlay.style.display = "none";
+  });
 });
 
 //carrega as certificações do JSON e renderiza na page bb
@@ -38,9 +46,9 @@ fetch("certifications.json")
           ${cert.titulo}
         </h3>
 
-        <ul>
-          <li><strong>Instituição:</strong> ${cert.instituicao}</li>
-          <li><strong>Conclusão:</strong> ${cert.data}</li>
+        <ul style="color:white;">
+          <li><strong style="color:blue;">Instituição:</strong> ${cert.instituicao}</li>
+          <li><strong style="color:blue;">Conclusão:</strong> ${cert.data}</li>
         </ul>
 
         <p>${cert.descricao}</p>

@@ -495,9 +495,10 @@ footer .line-footer p a {
   /* classes gerais */
   .btn-abrir-menu {
     display: block; /* Mostra o ícone apenas em telas menores que 1020px */
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 9999;
   }
   .flex {
     flex-direction: column;
