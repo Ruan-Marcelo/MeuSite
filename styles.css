@@ -183,12 +183,12 @@ section.topo-do-site .flex {
   justify-content: center;
   gap: 90px;
 }
-.topo-do-site h2 {
+.topo-do-site h1 {
   color: #fff;
   font-size: 42px;
   line-height: 40px;
 }
-.topo-do-site .txt-topo-site h2 span {
+.topo-do-site .txt-topo-site h1 span {
   color: blue;
 }
 .topo-do-site .txt-topo-site p {
@@ -517,7 +517,7 @@ footer .line-footer p a {
     padding: 20px 8%;
   }
   /* TOPO DO SITE */
-  .topo-do-site h2 {
+  .topo-do-site h1 {
     font-size: 28px;
   }
   section.topo-do-site .flex {
