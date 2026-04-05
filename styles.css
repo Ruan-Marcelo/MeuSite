@@ -14,6 +14,7 @@ body {
 }
 /* barra no topo site */
 .barra {
+  background-color: #0000006b;
   display: flex;
   position: fixed;
   top: 20px;
