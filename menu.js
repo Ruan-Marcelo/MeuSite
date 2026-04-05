@@ -56,7 +56,73 @@ form.addEventListener("submit", function (e) {
   })
   .catch((error) => {
     btn.value = "ENVIAR";
-    alert("Erro ao enviar 😢");
+    alert("Erro ao enviar");
     console.log(error);
   });
 });
+
+let projetos = [];
+
+fetch("projetos.json")
+  .then(res => res.json())
+  .then(data => {
+    projetos = data;
+    renderizar(projetos);
+  });
+
+const container = document.getElementById("projects-container");
+const filtroTech = document.getElementById("filtro-tech");
+const ordenacao = document.getElementById("ordenacao");
+
+filtroTech.addEventListener("change", aplicarFiltros);
+ordenacao.addEventListener("change", aplicarFiltros);
+
+function aplicarFiltros() {
+  let filtrados = [...projetos];
+
+  const techSelecionada = filtroTech.value;
+
+  if (techSelecionada !== "all") {
+    filtrados = filtrados.filter(proj =>
+      proj.tecnologias.includes(techSelecionada)
+    );
+  }
+
+  // ⭐ 
+  if (ordenacao.value === "destaque") {
+    filtrados.sort((a, b) => (b.destaque === true) - (a.destaque === true));
+  }
+
+  renderizar(filtrados);
+}
+
+function renderizar(lista) {
+  container.innerHTML = "";
+
+  lista.forEach(proj => {
+    const card = document.createElement("div");
+    card.classList.add("projeto-card");
+
+    const techs = proj.tecnologias
+      .map(t => `<span>${t}</span>`)
+      .join("");
+
+    card.innerHTML = `
+    ${proj.destaque ? '<span class="badge">⭐</span>' : ''}
+      <h3>${proj.titulo}</h3>
+      <p>${proj.descricao}</p>
+
+      <div class="tech">
+        ${techs}
+      </div>
+
+      <div class="actions">
+        <a href="${proj.link}" target="_blank">
+          ${proj.tipo === "github" ? "GitHub" : "Ver Projeto"}
+        </a>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}

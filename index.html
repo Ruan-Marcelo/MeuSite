@@ -226,110 +226,24 @@
         <div class="interface">
           <h2 class="titulo">MEUS <span>PROJETOS.</span></h2>
 
-          <div class="flex">
-            <!-- PROJETO 1 -->
-            <div class="projeto-card">
-              <h3>Article Hub</h3>
-              <p>
-                Plataforma full stack para gerenciamento de artigos com
-                autenticação JWT, construída com Angular, .NET e SQL Server.
-              </p>
-              <div class="tech">
-                <span>Angular</span>
-                <span>ASP.NET</span>
-                <span>SQL Server</span>
-              </div>
-              <div class="actions">
-                <a
-                  href="https://github.com/Ruan-Marcelo/AngularDotNet-Articles"
-                  target="_blank"
-                  >GitHub</a
-                >
-              </div>
-            </div>
+          <div class="filtros">
+            <select id="filtro-tech">
+              <option value="all">Todas tecnologias</option>
+              <option value="Angular">Angular</option>
+              <option value="C#">C#</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="PHP">PHP</option>
+            </select>
 
-            <!-- PROJETO 2 -->
-            <div class="projeto-card">
-              <h3>Consumo de API GitHub</h3>
-              <p>
-                Aplicação web que consome a API do GitHub para buscar usuários e
-                repositórios, utilizando JavaScript e boas práticas de
-                integração com APIs.
-              </p>
-              <div class="tech">
-                <span>JavaScript</span>
-                <span>API REST</span>
-              </div>
-              <div class="actions">
-                <a href="./consumoDeAPI.html" target="_blank">Ver Projeto</a>
-              </div>
-            </div>
+            <select id="ordenacao">
+              <option value="default">Ordenação padrão</option>
+              <option value="destaque">Destaques Primeiro</option>
+            </select>
+          </div>
 
-            <!-- PROJETO 3 -->
-            <div class="projeto-card">
-              <h3>Blog Management System</h3>
-              <p>
-                Sistema de gerenciamento de blog desenvolvido com PHP puro e
-                MySQL, permitindo criação, edição e visualização de posts.
-              </p>
-              <div class="tech">
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>Bootstrap</span>
-              </div>
-              <div class="actions">
-                <a
-                  href="https://github.com/Ruan-Marcelo/php-blog-system.git"
-                  target="_blank"
-                  >Ver Projeto</a
-                >
-              </div>
-            </div>
 
-            <div class="projeto-card">
-              <h3>Projetos em C# para estudo</h3>
-              <p>
-                Praticar programação Desenvolver lógica Aplicar conceitos de
-                Engenharia de Software Evoluir continuamente como desenvolvedor
-              </p>
-              <div class="tech">
-                <span>C#</span>
-                <span>ASP.NET CORE</span>
-                <span>SQL Server</span>
-                <span>Bootstrap</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="actions">
-                <a
-                  href="https://github.com/Ruan-Marcelo/Csharp-Projetos.git"
-                  target="_blank"
-                  >Ver Projeto</a
-                >
-              </div>
-            </div>
-            <div class="projeto-card">
-              <h3>LevelUp-TCC</h3>
-              <p>
-                Ecommerce/Blog Completo em ASP.NET Web, bootstrap e SQL Server.
-                Projeto de TCC para conclusão do curso de tecnico em
-                Desenvolvimento de Sistemas, com foco em arquitetura limpa e
-                integração frontend/backend.
-              </p>
-              <div class="tech">
-                <span>C#</span>
-                <span>ASP.NET Web</span>
-                <span>SQL Server</span>
-                <span>Bootstrap</span>
-                <span>JavaScript</span>
-              </div>
-              <div class="actions">
-                <a
-                  href="https://github.com/Ruan-Marcelo/LevelUp-TCC-SENAI-I3DESV.git"
-                  target="_blank"
-                  >Ver Projeto</a
-                >
-              </div>
-            </div>
+          <div class="flex" id="projects-container">
+            <!-- json aqui-->
           </div>
         </div>
       </section>
@@ -359,7 +273,9 @@
               <input type="submit" value="ENVIAR" />
             </div>
           </form>
-          <div id="toast" class="toast">Mensagem enviada! Aguarde a resposta 🚀</div>
+          <div id="toast" class="toast">
+            Mensagem enviada! Obrigado Pelo Contato
+          </div>
         </div>
       </section>
     </main>
@@ -422,7 +338,6 @@
       <!-- interface -->
     </footer>
     <!-- rodapé -->
-
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   </body>

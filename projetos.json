@@ -1,0 +1,47 @@
+[
+  {
+    "titulo": "Article Hub",
+    "descricao": "Plataforma full stack para gerenciamento de artigos com autenticação JWT, construída com Angular, .NET e SQL Server.",
+    "tecnologias": ["Angular", "ASP.NET", "SQL Server"],
+    "link": "https://github.com/Ruan-Marcelo/AngularDotNet-Articles",
+    "tipo": "github",
+     "destaque": true
+  },
+  {
+    "titulo": "Consumo de API GitHub",
+    "descricao": "Aplicação web que consome a API do GitHub para buscar usuários e repositórios.",
+    "tecnologias": ["JavaScript", "API REST"],
+    "link": "./consumoDeAPI.html",
+    "tipo": "projeto",
+     "destaque": true
+  },
+  {
+    "titulo": "Blog Management System",
+    "descricao": "Sistema de gerenciamento de blog com PHP e MySQL.",
+    "tecnologias": ["PHP", "MySQL", "Bootstrap"],
+    "link": "https://github.com/Ruan-Marcelo/php-blog-system.git",
+    "tipo": "github"
+  },
+  {
+    "titulo": "Projetos em C# para estudo",
+    "descricao": "Projetos focados em lógica, engenharia de software e evolução contínua.",
+    "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
+    "link": "https://github.com/Ruan-Marcelo/Csharp-Projetos.git",
+    "tipo": "github"
+  },
+  {
+    "titulo": "LevelUp-TCC",
+    "descricao": "Ecommerce/Blog completo em ASP.NET com arquitetura limpa.",
+    "tecnologias": ["C#", "ASP.NET Web", "SQL Server", "Bootstrap", "JavaScript"],
+    "link": "https://github.com/Ruan-Marcelo/LevelUp-TCC-SENAI-I3DESV.git",
+    "tipo": "github",
+     "destaque": true
+  },
+  {
+    "titulo": "Sistema De Tarefa API",
+    "descricao": "Web API com JWT, Entity Framework e integração com API de CEP.",
+    "tecnologias": ["C#", "ASP.NET Core API", "SQL Server", "JWT"],
+    "link": "https://github.com/Ruan-Marcelo/API-SistemaDeTarefas.git",
+    "tipo": "github"
+  }
+]

@@ -448,6 +448,32 @@ footer .line-footer p a {
   display: none; /* Oculta o ícone por padrão */
 }
 
+/* filtragem da parte de projetos na index bb */
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.filtros select {
+  border: 2px solid  #0044ff;
+  background-color: #000;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.badge {
+  margin-left: 8px;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 20px;
+}
+
 @media screen and (max-width: 1020px) {
   /* classes gerais */
   .btn-abrir-menu {
