@@ -15,63 +15,26 @@
     .btn-abrir-menu i { color: blue; font-size: 40px; cursor: pointer; }
     .btn-abrir-menu { display: none; }
 
-    .menu-mobile {
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 0;
-      height: 100vh;
-      background: #000;
-      overflow: hidden;
-      z-index: 99999;
-      transition: 0.5s;
-    }
+    .menu-mobile {position: fixed;right: 0;top: 0;width: 0;height: 100vh;background: #000;overflow: hidden;z-index: 99999;transition: 0.5s;}
     .menu-mobile.abrir-menu { width: 70%; }
     .menu-mobile .btn-fechar { padding: 20px 5%; }
     .menu-mobile .btn-fechar i { font-size: 30px; color: blue; cursor: pointer; }
     .menu-mobile nav ul { text-align: right; padding: 0; margin: 0; }
-    .menu-mobile nav ul li a {
-      color: #fff; font-size: 20px; font-weight: 300;
-      display: block; padding: 20px 8%;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+    .menu-mobile nav ul li a {color: #fff; font-size: 20px; font-weight: 300;display: block; padding: 20px 8%;text-decoration: none;transition: 0.2s;}
     .menu-mobile nav ul li a:hover { background-color: blue; color: #000; }
 
-    .overlay-menu {
-      background-color: #000000d0;
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 88888;
-      display: none;
-    }
+    .overlay-menu {background-color: #000000d0;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 88888;display: none;}
 
-    .btn-contato button {
-      padding: 10px 30px; background: blue; border: none;
-      border-radius: 30px; color: #fff; cursor: pointer; transition: 0.2s;
-    }
+    .btn-contato button {padding: 10px 30px; background: blue; border: none;border-radius: 30px; color: #fff; cursor: pointer; transition: 0.2s;}
     .btn-contato button:hover { transform: scale(1.05); box-shadow: 0 0 8px blue; }
 
     .certifications { padding: 40px 4%; }
     .titulo { color: #fff; text-align: center; font-size: 38px; }
     .titulo span { color: blue; }
 
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
+    .card-container {display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 20px;margin-top: 40px;}
 
-    .card {
-      background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
-      padding: 20px;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
+    .card {background: linear-gradient(145deg, #1c1c1c, #2a2a2a);padding: 20px;border-radius: 20px;transition: 0.3s;}
     .card:hover { transform: translateY(-5px); box-shadow: 0 0 10px blue; }
     .card img { width: 100%; max-width: 100px; margin-bottom: 10px; }
     .card h3 { display: flex; align-items: center; color: #00bfff; font-size: 18px; }
@@ -79,11 +42,7 @@
     .card p { color: #ccc; font-size: 14px; }
 
     .btn-social{ display:flex; justify-content:center; gap:15px; margin-top:20px; }
-    .btn-social a{
-      width:55px; height:55px; display:flex;
-      align-items:center; justify-content:center;
-      border-radius:50%; font-size:24px; color:#fff; text-decoration:none; transition:0.3s;
-    }
+    .btn-social a{width:55px; height:55px; display:flex;align-items:center; justify-content:center;border-radius:50%; font-size:24px; color:#fff;text-decoration:none; transition:0.3s;}
     .btn-social a.instagram{ background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); }
     .btn-social a.github{ background:#181717; }
     .btn-social a.linkedin{ background:#0a66c2; }
