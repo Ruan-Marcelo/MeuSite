@@ -43,5 +43,13 @@
     "tecnologias": ["C#", "ASP.NET Core API", "SQL Server", "JWT"],
     "link": "https://github.com/Ruan-Marcelo/API-SistemaDeTarefas.git",
     "tipo": "github"
+  },
+    {
+    "titulo": "ASP.NET Core MVC Blog",
+    "descricao": "Blog completo em ASP.NET com arquitetura limpa.",
+    "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
+    "link": "https://github.com/Ruan-Marcelo/aspnetcore9-blog-app.git",
+    "tipo": "github",
+     "destaque": true
   }
 ]
