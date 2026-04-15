@@ -48,22 +48,6 @@
     .btn-social a.linkedin{ background:#0a66c2; }
     .btn-social a:hover{ transform:translateY(-5px) scale(1.08); box-shadow:0 0 15px rgba(255,255,255,0.4); }
 
-    footer .line-footer .flex {
-      display:flex; align-items:center; justify-content:space-between;
-      gap:20px; flex-wrap:wrap;
-    }
-    .logo-footer img { max-width:160px; width:100%; height:auto; }
-    footer .line-footer.borda {
-      display:flex; justify-content:space-between; align-items:center;
-      flex-wrap:wrap; gap:15px; margin-top:20px; padding-top:20px;
-      border-top:2px solid blue;
-    }
-    footer .line-footer.borda p { color:#fff; font-size:14px; margin:0; }
-    footer .line-footer.borda a { color:#fff; text-decoration:none; transition:0.2s; }
-    footer .line-footer.borda a:hover { color:#00bfff; }
-    footer .line-footer.borda i { color:blue; margin-right:5px; }
-    .direitos { width:100%; text-align:center; margin-top:10px; }
-
     @media (max-width: 768px) {
       .btn-abrir-menu { display: block;position: fixed;top: 20px; right: 20px; z-index: 9999;}    
       header nav.menu-desktop { display: none; }
