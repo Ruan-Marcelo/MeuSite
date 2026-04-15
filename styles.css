@@ -5,8 +5,8 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 body {
   background-color: #000;
@@ -29,7 +29,7 @@ body {
   color: #0044ff;
   gap: 5px;
 
-   z-index: 999; /*em frente tudo */
+  z-index: 999; /*em frente tudo */
 }
 
 .dinamico {
@@ -47,7 +47,7 @@ body {
   padding: 15px 20px;
   border-left: 4px solid blue;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.4s ease;
@@ -265,7 +265,7 @@ section.especialidades .flex {
   border-radius: 16px;
 
   transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -355,44 +355,44 @@ section.sobre .flex {
   margin: 20px 0;
   text-align: justify;
 }
-.btn-social{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  margin-top:20px;
+.btn-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.btn-social a{
-  width:55px;
-  height:55px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-size:24px;
-  color:#fff;
-  transition:0.3s;
-  text-decoration:none;
+.btn-social a {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
 }
 
 /* insta */
-.btn-social a.instagram{
-  background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+.btn-social a.instagram {
+  background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
 }
 
 /* Github */
-.btn-social a.github{
-  background:#181717;
+.btn-social a.github {
+  background: #181717;
 }
 
 /* linkedin */
-.btn-social a.linkedin{
-  background:#0a66c2;
+.btn-social a.linkedin {
+  background: #0a66c2;
 }
 
-.btn-social a:hover{
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 15px rgba(255,255,255,0.4);
+.btn-social a:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 /* ESTILO DO FORMULARIO DE CONTATO */
 section.formulario {
@@ -437,6 +437,18 @@ form .btn-enviar input[type="submit"] {
 footer {
   padding: 60px 4%;
   box-shadow: 0 0 40px 01px #ffffff0e;
+  border-top: 10px solid;
+  border-image: linear-gradient(
+      90deg,
+      #020617,
+      #0a0f2c,
+      #0b1f3a,
+      #0033ff,
+      #0055ff,
+      #007bff,
+      #00aaff
+    )
+    1;
 }
 footer .flex {
   justify-content: space-between;
@@ -470,13 +482,13 @@ footer .line-footer p a {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .filtros select {
-  border: 2px solid  #0044ff;
+  border: 2px solid #0044ff;
   background-color: #000;
   color: #ffffff;
   padding: 8px;
