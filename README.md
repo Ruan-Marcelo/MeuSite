@@ -1,4 +1,4 @@
-<h1 align="center">💼 Meu Portfólio Online</h1>
+<h1 align="center"> Meu Portfólio Online</h1>
 
 <p align="center">
   <a href="https://zruanzito.com.br" target="_blank">
@@ -28,8 +28,8 @@
 
 ## 📸 Preview do Projeto
 
-<img src="imagens/tela1.png" >
-<img src="imagens/tela2.png" >
+<img src="./imagens/Captura de tela 2026-04-15 194047.png" >
+<img src="./imagens/Captura de tela 2026-04-15 194100.png" >
 
 ---
 
@@ -53,12 +53,15 @@ Além disso, ele também serve como um ambiente de **estudo e prática**, aplica
 ## 🛠️ Tecnologias Utilizadas
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,github,git,vscode" />
 </p>
 
 - HTML5  
 - CSS3  
 - JavaScript  
+- Bootstrap  
+- Git  
+- GitHub  
 
 ---
 
