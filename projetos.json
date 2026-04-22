@@ -49,6 +49,13 @@
     "descricao": "Blog completo em ASP.NET com arquitetura limpa.",
     "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/aspnetcore9-blog-app.git",
+    "tipo": "github"
+  },
+    {
+    "titulo": "Sistema de gestão de estoque ASP.NET Web API",
+    "descricao": "Gestão interna de estoque.",
+    "tecnologias": ["C#", "ASP.NET Web API", "SQL Server", "JWT", "JavaScript","API REST"],
+    "link": "https://github.com/Ruan-Marcelo/inventory-management-system-dotnet.git",
     "tipo": "github",
      "destaque": true
   }
