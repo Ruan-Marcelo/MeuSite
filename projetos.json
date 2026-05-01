@@ -4,59 +4,74 @@
     "descricao": "Plataforma full stack para gerenciamento de artigos com autenticação JWT, construída com Angular, .NET e SQL Server.",
     "tecnologias": ["Angular", "ASP.NET", "SQL Server"],
     "link": "https://github.com/Ruan-Marcelo/AngularDotNet-Articles",
-    "tipo": "github",
-     "destaque": true
+    "tipo": "fullstack",
+    "destaque": true
   },
   {
     "titulo": "Consumo de API GitHub",
     "descricao": "Aplicação web que consome a API do GitHub para buscar usuários e repositórios.",
     "tecnologias": ["JavaScript", "API REST"],
     "link": "./consumoDeAPI.html",
-    "tipo": "projeto",
-     "destaque": true
+    "tipo": "frontend",
+    "destaque": true
   },
   {
     "titulo": "Blog Management System",
     "descricao": "Sistema de gerenciamento de blog com PHP e MySQL.",
     "tecnologias": ["PHP", "MySQL", "Bootstrap"],
     "link": "http://apoiopet.kesug.com/",
-    "tipo": "github"
+    "tipo": "backend"
   },
   {
     "titulo": "Projetos em C# para estudo",
     "descricao": "Projetos focados em lógica, engenharia de software e evolução contínua.",
     "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/Csharp-Projetos.git",
-    "tipo": "github"
+    "tipo": "backend"
   },
   {
     "titulo": "LevelUp-TCC",
     "descricao": "Ecommerce/Blog completo em ASP.NET com arquitetura limpa.",
-    "tecnologias": ["C#", "ASP.NET Web", "SQL Server", "Bootstrap", "JavaScript"],
+    "tecnologias": ["C#", "ASP.NET", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/LevelUp-TCC-SENAI-I3DESV.git",
-    "tipo": "github",
-     "destaque": true
+    "tipo": "fullstack",
+    "destaque": true
   },
   {
     "titulo": "Sistema De Tarefa API",
     "descricao": "Web API com JWT, Entity Framework e integração com API de CEP.",
     "tecnologias": ["C#", "ASP.NET Core API", "SQL Server", "JWT"],
     "link": "https://github.com/Ruan-Marcelo/API-SistemaDeTarefas.git",
-    "tipo": "github"
+    "tipo": "backend"
   },
-    {
+  {
     "titulo": "ASP.NET Core MVC Blog",
     "descricao": "Blog completo em ASP.NET com arquitetura limpa.",
     "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/aspnetcore9-blog-app.git",
-    "tipo": "github"
+    "tipo": "fullstack"
   },
-    {
+  {
     "titulo": "Sistema de gestão de estoque ASP.NET Web API",
     "descricao": "Gestão interna de estoque.",
-    "tecnologias": ["C#", "ASP.NET Web API", "SQL Server", "JWT", "JavaScript","API REST"],
+    "tecnologias": ["C#", "ASP.NET Web API", "SQL Server", "JWT", "JavaScript", "API REST"],
     "link": "https://github.com/Ruan-Marcelo/inventory-management-system-dotnet.git",
-    "tipo": "github",
-     "destaque": true
+    "tipo": "backend",
+    "destaque": true
+  },
+  {
+    "titulo": "Loja Virtual para Alfaiataria",
+    "descricao": "Sistema de e-commerce desenvolvido para uma loja de alfaiataria.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "link": "https://github.com/Ruan-Marcelo/lojaStatic",
+    "tipo": "frontend",
+    "destaque": true
+  },
+  {
+    "titulo": "Landing Page de Buffet",
+    "descricao": "Landing page desenvolvida para apresentação de serviços de buffet.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com/Ruan-Marcelo/YruuFetas",
+    "tipo": "frontend"
   }
 ]
