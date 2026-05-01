@@ -140,17 +140,19 @@ ordenacao.addEventListener("change", aplicarFiltros);
 function aplicarFiltros() {
   let filtrados = [...projetos];
 
-  const techSelecionada = filtroTech.value;
+  const tech = filtroTech.value;
+  const ordem = ordenacao.value;
 
-  if (techSelecionada !== "all") {
-    filtrados = filtrados.filter(proj =>
-      proj.tecnologias.includes(techSelecionada)
+  if (tech !== "all") {
+    filtrados = filtrados.filter(p =>
+      p.tecnologias.includes(tech)
     );
   }
-
-  // ⭐ 
-  if (ordenacao.value === "destaque") {
-    filtrados.sort((a, b) => (b.destaque === true) - (a.destaque === true));
+  if (["frontend", "backend", "fullstack"].includes(ordem)) {
+    filtrados = filtrados.filter(p => p.tipo === ordem);
+  }
+  if (ordem === "destaque") {
+    filtrados.sort((a, b) => (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0));
   }
 
   renderizar(filtrados);
@@ -164,12 +166,14 @@ function renderizar(lista) {
     card.classList.add("projeto-card");
 
     const techs = proj.tecnologias
-      .map(t => `<span>${t}</span>`)
+      .map(t => `<span class="tag">${t}</span>`)
       .join("");
 
     card.innerHTML = `
-    ${proj.destaque ? '<span class="badge">⭐</span>' : ''}
+      ${proj.destaque ? '<span class="badge">⭐</span>' : ''}
+
       <h3>${proj.titulo}</h3>
+
       <p>${proj.descricao}</p>
 
       <div class="tech">
@@ -186,3 +190,5 @@ function renderizar(lista) {
     container.appendChild(card);
   });
 }
+
+renderizar(projetos);
