@@ -2,7 +2,7 @@
   {
     "titulo": "Article Hub",
     "descricao": "Plataforma full stack para gerenciamento de artigos com autenticação JWT, construída com Angular, .NET e SQL Server.",
-    "tecnologias": ["Angular", "ASP.NET", "SQL Server"],
+    "tecnologias": ["Angular", "ASP.NET", "SQL Server", "JavaScript", "C#"],
     "link": "https://github.com/Ruan-Marcelo/AngularDotNet-Articles",
     "tipo": "fullstack",
     "destaque": true
@@ -63,7 +63,7 @@
     "titulo": "Loja Virtual para Alfaiataria",
     "descricao": "Sistema de e-commerce desenvolvido para uma loja de alfaiataria.",
     "tecnologias": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
-    "link": "https://github.com/Ruan-Marcelo/lojaStatic",
+    "link": "https://ruan-marcelo.github.io/lojaStatic/index.html",
     "tipo": "frontend",
     "destaque": true
   },
@@ -71,7 +71,7 @@
     "titulo": "Landing Page de Buffet",
     "descricao": "Landing page desenvolvida para apresentação de serviços de buffet.",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
-    "link": "https://github.com/Ruan-Marcelo/YruuFetas",
+    "link": "https://www.yruufesta.shop/",
     "tipo": "frontend"
   }
 ]
