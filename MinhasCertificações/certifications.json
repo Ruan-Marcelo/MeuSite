@@ -76,7 +76,7 @@
     "instituicao": "SENAI",
     "data": "Setembro 2024",
     "descricao": "Integração de sistemas IoT.",
-    "imagem": "SENAI.png",
+    "imagem": "senai.png",
     "icone": "iot.png"
   },
   {
@@ -84,7 +84,7 @@
     "instituicao": "SENAI",
     "data": "Janeiro 2024",
     "descricao": "Dashboards e análise de dados.",
-    "imagem": "SENAI.png",
+    "imagem": "senai.png",
     "icone": "powerbi.png"
   },
   {
@@ -92,7 +92,7 @@
     "instituicao": "SENAI",
     "data": "Julho 2024",
     "descricao": "Segurança em cloud computing.",
-    "imagem": "SENAI.png",
+    "imagem": "senai.png",
     "icone": "cloud.png"
   },
   {
@@ -108,7 +108,7 @@
     "instituicao": "SENAI",
     "data": "Julho 2024",
     "descricao": "Desenvolvimento mobile.",
-    "imagem": "SENAI.png",
+    "imagem": "senai.png",
     "icone": "android.png"
   }
 ]

@@ -1,40 +1,36 @@
-let btnMenu = document.getElementById("btn-menu");
-let menu = document.getElementById("menu-mobile");
-let overlay = document.getElementById("overley-menu"); // se quiser, pode renomear para overlay-menu
-let btnFechar = document.querySelector(".menu-mobile .btn-fechar");
+const btnMenu = document.getElementById("btn-menu");
+const menu = document.getElementById("menu-mobile");
+const overlay = document.getElementById("overley-menu");
+const btnFechar = document.querySelector(".menu-mobile .btn-fechar");
 
-// abre
-btnMenu.addEventListener("click", () => {
-  menu.classList.add("abrir-menu");
-  overlay.style.display = "block";
+function fecharMenu() {
+  menu?.classList.remove("abrir-menu");
+  if (overlay) overlay.style.display = "none";
+}
+
+btnMenu?.addEventListener("click", () => {
+  menu?.classList.add("abrir-menu");
+  if (overlay) overlay.style.display = "block";
 });
 
-// fecha no x
-btnFechar.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
-  overlay.style.display = "none";
+btnFechar?.addEventListener("click", fecharMenu);
+overlay?.addEventListener("click", fecharMenu);
+
+document.querySelectorAll(".menu-mobile nav ul li a").forEach((link) => {
+  link.addEventListener("click", fecharMenu);
 });
 
-// fecha se clicar fora
-overlay.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
-  overlay.style.display = "none";
-});
-
-document.querySelectorAll(".menu-mobile nav ul li a").forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("abrir-menu");
-    overlay.style.display = "none";
-  });
-});
-
-//carrega as certificações do JSON e renderiza na page bb
+// carrega as certificações do JSON e renderiza na página
 fetch("certifications.json")
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => {
+    if (!response.ok) throw new Error("Erro ao carregar certificações");
+    return response.json();
+  })
+  .then((data) => {
     const container = document.getElementById("certifications-container");
+    if (!container) return;
 
-    data.forEach(cert => {
+    data.forEach((cert) => {
       const card = document.createElement("article");
       card.classList.add("card");
 
@@ -42,7 +38,7 @@ fetch("certifications.json")
         <img src="../imagens/${cert.imagem}" alt="${cert.instituicao}" loading="lazy">
 
         <h3>
-          <img src="../imagens/${cert.icone}" alt="${cert.titulo}">
+          <img src="../imagens/${cert.icone}" alt="${cert.titulo}" loading="lazy">
           ${cert.titulo}
         </h3>
 
@@ -57,4 +53,10 @@ fetch("certifications.json")
       container.appendChild(card);
     });
   })
-  .catch(error => console.error("Erro ao carregar certificações:", error));
+  .catch(() => {
+    const container = document.getElementById("certifications-container");
+    if (container) {
+      container.innerHTML =
+        '<p style="color:white;">Não foi possível carregar as certificações.</p>';
+    }
+  });
