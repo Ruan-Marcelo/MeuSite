@@ -8,23 +8,28 @@ html {
   font-size: 10px;
 }
 body {
-  cursor: url(../imagens/openhand_100161.png), auto;
   width: 100%;
   min-height: 100vh;
   display: grid;
   place-content: center;
   font-family: Poppins, sans-serif;
-  background: rgba(0, 0, 0, 0.929);
+  background:
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.25), transparent 34rem),
+    #05070d;
+  padding: 2rem;
 }
 .container {
   display: grid;
   place-content: center;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
   min-height: 200px;
-  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
+  background: rgba(17, 24, 39, 0.82);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 .container::after {
   z-index: -1;
@@ -58,6 +63,10 @@ body {
   width: 40px;
   cursor: pointer;
 }
+.star:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 4px;
+}
 .star svg {
   fill: none;
   width: 100%;
@@ -78,4 +87,9 @@ body {
   color: #7d7d7d;
   text-decoration: none;
   cursor: pointer;
+  margin-top: 2rem;
+}
+.voltar:hover,
+.voltar:focus {
+  color: #fff;
 }

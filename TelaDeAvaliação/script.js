@@ -5,8 +5,8 @@ const defaultRatingIndex = 0;
 let currentRatingIndex = 0;
 
 const ratings = [
-  { emoji: "😎", name: "Classifique o Desempenho do site" },
-  { emoji: "😔", name: "Muito Ruim" },
+  { emoji: "😎", name: "Classifique o desempenho do site" },
+  { emoji: "😔", name: "Muito ruim" },
   { emoji: "🙁", name: "Ruim" },
   { emoji: "🙂", name: "Bom" },
   { emoji: "🤩", name: "Muito bom" },
@@ -14,22 +14,18 @@ const ratings = [
 ];
 
 const checkSelectedStar = (star) => {
-  if (parseInt(star.getAttribute("data-rate")) === currentRatingIndex) {
-    return true;
-  } else {
-    return false;
-  }
+  return parseInt(star.getAttribute("data-rate"), 10) === currentRatingIndex;
 };
 
 const setRating = (index) => {
   stars.forEach((star) => star.classList.remove("selected"));
   if (index > 0 && index <= stars.length) {
     document
-      .querySelector('[data-rate="' + index + '"]')
-      .classList.add("selected");
+      .querySelector(`[data-rate="${index}"]`)
+      ?.classList.add("selected");
   }
-  emojiEl.innerHTML = ratings[index].emoji;
-  statusEl.innerHTML = ratings[index].name;
+  emojiEl.textContent = ratings[index].emoji;
+  statusEl.textContent = ratings[index].name;
 };
 
 const resetRating = () => {
@@ -38,23 +34,34 @@ const resetRating = () => {
 };
 
 stars.forEach((star) => {
+  const index = parseInt(star.getAttribute("data-rate"), 10);
+  star.setAttribute("role", "button");
+  star.setAttribute("tabindex", "0");
+  star.setAttribute("aria-label", `Avaliar com ${index} estrela${index > 1 ? "s" : ""}`);
+
   star.addEventListener("click", function () {
     if (checkSelectedStar(star)) {
       resetRating();
       return;
     }
-    const index = parseInt(star.getAttribute("data-rate"));
     currentRatingIndex = index;
     setRating(index);
   });
 
   star.addEventListener("mouseover", function () {
-    const index = parseInt(star.getAttribute("data-rate"));
     setRating(index);
   });
 
   star.addEventListener("mouseout", function () {
     setRating(currentRatingIndex);
+  });
+
+  star.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      currentRatingIndex = index;
+      setRating(index);
+    }
   });
 });
 
