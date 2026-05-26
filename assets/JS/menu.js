@@ -181,9 +181,18 @@ function renderizar(lista) {
     if (proj.destaque) {
       const badge = document.createElement("span");
       badge.className = "badge";
-      badge.textContent = "★";
+      badge.textContent = "Destaque";
       card.appendChild(badge);
     }
+
+    const tipo = document.createElement("span");
+    tipo.className = `projeto-tipo tipo-${proj.tipo}`;
+    tipo.textContent =
+      {
+        frontend: "Front-end",
+        backend: "Back-end",
+        fullstack: "Full Stack",
+      }[proj.tipo] || "Projeto";
 
     const titulo = document.createElement("h3");
     titulo.textContent = proj.titulo;
@@ -208,10 +217,12 @@ function renderizar(lista) {
     link.href = proj.link;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = proj.link.includes("github.com") ? "GitHub" : "Ver Projeto";
+    link.innerHTML = proj.link.includes("github.com")
+      ? '<i class="bi bi-github"></i> GitHub'
+      : '<i class="bi bi-box-arrow-up-right"></i> Ver projeto';
     actions.appendChild(link);
 
-    card.append(titulo, descricao, tech, actions);
+    card.append(tipo, titulo, descricao, tech, actions);
     container.appendChild(card);
   });
 }
