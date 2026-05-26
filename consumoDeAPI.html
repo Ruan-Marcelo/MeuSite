@@ -33,6 +33,7 @@
         --border: #30363d;
         --text: #e6edf3;
         --accent: #2f81f7;
+        --muted: #8b949e;
       }
 
       .light {
@@ -41,6 +42,7 @@
         --border: #d0d7de;
         --text: #24292f;
         --accent: #0969da;
+        --muted: #57606a;
       }
 
       * {
@@ -171,7 +173,32 @@
 
       .commit {
         font-size: 12px;
-        opacity: 0.7;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .commit-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .commit-item {
+        border-top: 1px solid var(--border);
+        padding-top: 10px;
+      }
+
+      .commit-item strong {
+        display: block;
+        color: var(--text);
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .commit-item a {
+        color: var(--accent);
+        font-size: 12px;
+        text-decoration: none;
       }
 
       canvas {
@@ -215,6 +242,7 @@
         height: 12px;
         background: #161b22;
         border-radius: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
       }
 
       .level1 {
@@ -228,6 +256,11 @@
       }
       .level4 {
         background: #39d353;
+      }
+
+      .empty-state {
+        color: var(--muted);
+        font-size: 14px;
       }
     </style>
   </head>
@@ -386,6 +419,8 @@
             return;
           }
 
+          const events = await fetchGitHubEvents(user);
+
           repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
           renderRepos(repos);
@@ -396,57 +431,141 @@
 
           calculateScore(repos);
 
-          generateHeatmap();
+          renderRecentCommits(events);
+
+          generateHeatmap(events);
         } catch {
           feedback.textContent = "Não foi possível consultar a API do GitHub agora.";
         }
       }
 
+      async function fetchGitHubEvents(user) {
+        try {
+          const response = await fetch(
+            `https://api.github.com/users/${user}/events/public?per_page=100`,
+          );
+
+          if (!response.ok) return [];
+
+          const events = await response.json();
+          return Array.isArray(events) ? events : [];
+        } catch {
+          return [];
+        }
+      }
+
       /* heatmap */
 
-      function generateHeatmap() {
+      function getCommitEvents(events) {
+        return events.filter(
+          (event) =>
+            event.type === "PushEvent" &&
+            Array.isArray(event.payload?.commits) &&
+            event.payload.commits.length > 0,
+        );
+      }
+
+      function generateHeatmap(events = []) {
         const heatmap = document.getElementById("heatmap");
 
         heatmap.innerHTML = "";
+        const commitsByDate = new Map();
 
-        for (let i = 0; i < 180; i++) {
-          const level = Math.floor(Math.random() * 5);
+        getCommitEvents(events).forEach((event) => {
+          const date = new Date(event.created_at).toISOString().slice(0, 10);
+          const total = commitsByDate.get(date) || 0;
+          commitsByDate.set(date, total + event.payload.commits.length);
+        });
 
+        const today = new Date();
+        const days = [];
+
+        for (let i = 179; i >= 0; i--) {
+          const date = new Date(today);
+          date.setDate(today.getDate() - i);
+          days.push(date.toISOString().slice(0, 10));
+        }
+
+        days.forEach((date) => {
+          const count = commitsByDate.get(date) || 0;
+          const level = Math.min(count, 4);
           const div = document.createElement("div");
 
           div.classList.add("day");
+          div.title = `${count} commit${count === 1 ? "" : "s"} em ${date}`;
 
           if (level > 0) {
             div.classList.add("level" + level);
           }
 
           heatmap.appendChild(div);
+        });
+      }
+
+      function renderRecentCommits(events) {
+        const analysis = document.getElementById("analysis");
+        const commits = getCommitEvents(events)
+          .flatMap((event) =>
+            event.payload.commits.map((commit) => ({
+              repo: event.repo.name,
+              message: commit.message,
+              url: commit.url
+                ?.replace("api.github.com/repos", "github.com")
+                .replace("/commits/", "/commit/"),
+              date: event.created_at,
+            })),
+          )
+          .slice(0, 6);
+
+        const oldList = analysis.querySelector(".commit-list");
+        oldList?.remove();
+
+        const list = document.createElement("div");
+        list.className = "commit-list";
+
+        if (!commits.length) {
+          list.innerHTML = '<p class="empty-state">Nenhum commit público recente encontrado.</p>';
+          analysis.appendChild(list);
+          return;
         }
+
+        commits.forEach((commit) => {
+          const item = document.createElement("div");
+          item.className = "commit-item";
+
+          const title = document.createElement("strong");
+          title.textContent = commit.message.split("\n")[0];
+
+          const meta = document.createElement("span");
+          meta.className = "commit";
+          meta.textContent = `${commit.repo} - ${new Date(commit.date).toLocaleDateString("pt-BR")}`;
+
+          item.append(title, meta);
+
+          if (commit.url) {
+            const link = document.createElement("a");
+            link.href = commit.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "Ver commit";
+            item.appendChild(link);
+          }
+
+          list.appendChild(item);
+        });
+
+        analysis.appendChild(list);
       }
 
       /* repos */
 
-      async function renderRepos(repos) {
+      function renderRepos(repos) {
         const reposContainer = document.getElementById("repos");
 
         const topRepos = repos.slice(0, 10);
 
         for (let i = 0; i < topRepos.length; i++) {
           let repo = topRepos[i];
-
-          let lastCommit = "Sem commits";
-
-          try {
-            const commitsRes = await fetch(
-              repo.commits_url.replace("{/sha}", ""),
-            );
-
-            const commits = await commitsRes.json();
-
-            if (Array.isArray(commits)) {
-              lastCommit = commits[0]?.commit?.message || "Sem commits";
-            }
-          } catch {}
 
           const li = document.createElement("li");
 
@@ -464,7 +583,7 @@
 </div>
 
 <div class="commit">
-Último commit: ${lastCommit}
+Atualizado em ${new Date(repo.updated_at).toLocaleDateString("pt-BR")}
 </div>
 
 <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">Abrir repositório</a>
