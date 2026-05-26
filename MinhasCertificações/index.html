@@ -26,8 +26,8 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="../assets/CSS/styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -85,14 +85,40 @@
 
 <div class="overley-menu" id="overley-menu"></div>
 
+<main>
+<section class="cert-hero">
+  <div class="interface">
+    <p class="eyebrow">Formação contínua</p>
+    <h1>Certificações que acompanham minha evolução como dev</h1>
+    <p>
+      Cursos e trilhas focadas em desenvolvimento web, C#, segurança, cloud,
+      dados e fundamentos de tecnologia.
+    </p>
+
+    <div class="cert-stats" aria-label="Resumo das certificações">
+      <span><strong id="total-certificacoes">0</strong> certificações</span>
+      <span><strong id="total-instituicoes">0</strong> instituições</span>
+      <span><strong>2024-2026</strong> evolução</span>
+    </div>
+  </div>
+</section>
+
 <!-- CERTIFICAÇÕES -->
 <section class="certifications">
-  <h2 class="titulo">Minhas <span>Certificações</span></h2>
+  <div class="interface">
+  <div class="section-heading">
+    <h2 class="titulo">Minhas <span>Certificações</span></h2>
+    <select id="filtro-instituicao" aria-label="Filtrar certificações por instituição">
+      <option value="all">Todas instituições</option>
+    </select>
+  </div>
 
   <div class="card-container" id="certifications-container">
     <!-- JS renderiza aqui -->
   </div>
+  </div>
 </section>
+</main>
 
  <footer>
       <div class="interface">
