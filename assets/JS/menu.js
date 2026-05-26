@@ -1,31 +1,26 @@
-let btnMenu = document.getElementById("btn-menu");
-let menu = document.getElementById("menu-mobile");
-let overley = document.getElementById("overley-menu");
+const btnMenu = document.getElementById("btn-menu");
+const menu = document.getElementById("menu-mobile");
+const overlay = document.getElementById("overley-menu");
 
-btnMenu.addEventListener("click", () => {
-  console.log("Menu Button Clicked");
-  menu.classList.add("abrir-menu");
-  overley.style.display = "block"; // Mostra o overlay
+function fecharMenu() {
+  menu?.classList.remove("abrir-menu");
+  if (overlay) overlay.style.display = "none";
+}
+
+btnMenu?.addEventListener("click", () => {
+  menu?.classList.add("abrir-menu");
+  if (overlay) overlay.style.display = "block";
 });
 
-menu.addEventListener("click", () => {
-  console.log("Menu Clicked");
-  menu.classList.remove("abrir-menu");
-  overley.style.display = "none"; // Oculta o overlay
-});
-
-overley.addEventListener("click", () => {
-  console.log("Overlay Clicked");
-  menu.classList.remove("abrir-menu");
-  overley.style.display = "none"; // Oculta o overlay
-});
+menu?.addEventListener("click", fecharMenu);
+overlay?.addEventListener("click", fecharMenu);
 
 // barra no topo
 const textos = [
   "Desenvolvedor Full-Stack",
   "Desenvolvedor Back-end",
   "Especialista em .NET",
-  "APIs | Angular | SQL Server"
+  "APIs | Angular | SQL Server",
 ];
 
 let index = 0;
@@ -35,6 +30,8 @@ let escrevendo = true;
 const elemento = document.querySelector(".dinamico");
 
 function digitar() {
+  if (!elemento) return;
+
   if (escrevendo) {
     if (charIndex < textos[index].length) {
       elemento.textContent += textos[index].charAt(charIndex);
@@ -44,113 +41,119 @@ function digitar() {
       escrevendo = false;
       setTimeout(digitar, 1500);
     }
+  } else if (charIndex > 0) {
+    elemento.textContent = textos[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(digitar, 40);
   } else {
-    if (charIndex > 0) {
-      elemento.textContent = textos[index].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(digitar, 40);
-    } else {
-      escrevendo = true;
-      index = (index + 1) % textos.length;
-      setTimeout(digitar, 300);
-    }
+    escrevendo = true;
+    index = (index + 1) % textos.length;
+    setTimeout(digitar, 300);
   }
 }
 
 digitar();
 
-// emails
- // INICIALIZA EMAILJS
-  (function () {
-    emailjs.init("N9ziwX_xtVhMMNSX7");
-  })();
+if (window.emailjs) {
+  emailjs.init("N9ziwX_xtVhMMNSX7");
+}
 
-  const form = document.getElementById("form-contato");
-  const toast = document.getElementById("toast");
+const form = document.getElementById("form-contato");
+const toast = document.getElementById("toast");
 
-  function showToast() {
-    toast.classList.add("show");
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 3000);
+function showToast() {
+  toast?.classList.add("show");
+  setTimeout(() => {
+    toast?.classList.remove("show");
+  }, 3000);
+}
+
+form?.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const celular = document.getElementById("celular").value.trim();
+  const mensagem = document.getElementById("mensagem").value.trim();
+  const btn = form.querySelector('input[type="submit"]');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const celularRegex = /^\(?\d{2}\)?\s?9?\d{4}-?\d{4}$/;
+
+  if (!emailRegex.test(email)) {
+    alert("Digite um email válido!");
+    return;
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  if (celular !== "" && !celularRegex.test(celular)) {
+    alert("Digite um celular válido! Ex: (16) 99999-9999");
+    return;
+  }
 
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const celular = document.getElementById("celular").value.trim();
-    const mensagem = document.getElementById("mensagem").value.trim();
+  if (!window.emailjs) {
+    alert("O serviço de envio não carregou. Tente novamente em instantes.");
+    return;
+  }
 
-    const btn = form.querySelector('input[type="submit"]');
+  btn.value = "Enviando...";
+  btn.disabled = true;
 
-    // REGEX
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const celularRegex = /^\(?\d{2}\)?\s?9?\d{4}-?\d{4}$/;
-
-    // VALIDAÇÕES
-    if (!emailRegex.test(email)) {
-      alert("Digite um email válido!");
-      return;
-    }
-
-    if (celular !== "" && !celularRegex.test(celular)) {
-      alert("Digite um celular válido! Ex: (16) 99999-9999");
-      return;
-    }
-
-    btn.value = "Enviando...";
-
-    // ENVIO
-    emailjs.send("service_jl668yi", "template_hmddxum", {
-      nome: nome,
-      email: email,
-      celular: celular,
-      mensagem: mensagem,
+  emailjs
+    .send("service_jl668yi", "template_hmddxum", {
+      nome,
+      email,
+      celular,
+      mensagem,
     })
     .then(() => {
       showToast();
       form.reset();
-      btn.value = "ENVIAR";
     })
-    .catch((error) => {
+    .catch(() => {
+      alert("Erro ao enviar. Tente novamente.");
+    })
+    .finally(() => {
       btn.value = "ENVIAR";
-      alert("Erro ao enviar");
-      console.log(error);
+      btn.disabled = false;
     });
-  });
+});
 
 let projetos = [];
-
-fetch("projetos.json")
-  .then(res => res.json())
-  .then(data => {
-    projetos = data;
-    renderizar(projetos);
-  });
 
 const container = document.getElementById("projects-container");
 const filtroTech = document.getElementById("filtro-tech");
 const ordenacao = document.getElementById("ordenacao");
 
-filtroTech.addEventListener("change", aplicarFiltros);
-ordenacao.addEventListener("change", aplicarFiltros);
+fetch("projetos.json")
+  .then((res) => {
+    if (!res.ok) throw new Error("Erro ao carregar projetos");
+    return res.json();
+  })
+  .then((data) => {
+    projetos = data;
+    renderizar(projetos);
+  })
+  .catch(() => {
+    renderizar([]);
+  });
+
+filtroTech?.addEventListener("change", aplicarFiltros);
+ordenacao?.addEventListener("change", aplicarFiltros);
 
 function aplicarFiltros() {
   let filtrados = [...projetos];
 
-  const tech = filtroTech.value;
-  const ordem = ordenacao.value;
+  const tech = filtroTech?.value || "all";
+  const ordem = ordenacao?.value || "default";
 
   if (tech !== "all") {
-    filtrados = filtrados.filter(p =>
-      p.tecnologias.includes(tech)
-    );
+    filtrados = filtrados.filter((p) => p.tecnologias.includes(tech));
   }
+
   if (["frontend", "backend", "fullstack"].includes(ordem)) {
-    filtrados = filtrados.filter(p => p.tipo === ordem);
+    filtrados = filtrados.filter((p) => p.tipo === ordem);
   }
+
   if (ordem === "destaque") {
     filtrados.sort((a, b) => (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0));
   }
@@ -159,34 +162,56 @@ function aplicarFiltros() {
 }
 
 function renderizar(lista) {
+  if (!container) return;
+
   container.innerHTML = "";
 
-  lista.forEach(proj => {
+  if (!lista.length) {
+    const vazio = document.createElement("p");
+    vazio.className = "sem-resultados";
+    vazio.textContent = "Nenhum projeto encontrado.";
+    container.appendChild(vazio);
+    return;
+  }
+
+  lista.forEach((proj) => {
     const card = document.createElement("div");
     card.classList.add("projeto-card");
 
-    const techs = proj.tecnologias
-      .map(t => `<span class="tag">${t}</span>`)
-      .join("");
+    if (proj.destaque) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = "★";
+      card.appendChild(badge);
+    }
 
-    card.innerHTML = `
-      ${proj.destaque ? '<span class="badge">⭐</span>' : ''}
+    const titulo = document.createElement("h3");
+    titulo.textContent = proj.titulo;
 
-      <h3>${proj.titulo}</h3>
+    const descricao = document.createElement("p");
+    descricao.textContent = proj.descricao;
 
-      <p>${proj.descricao}</p>
+    const tech = document.createElement("div");
+    tech.className = "tech";
 
-      <div class="tech">
-        ${techs}
-      </div>
+    proj.tecnologias.forEach((item) => {
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = item;
+      tech.appendChild(tag);
+    });
 
-      <div class="actions">
-        <a href="${proj.link}" target="_blank">
-          ${proj.tipo === "github" ? "GitHub" : "Ver Projeto"}
-        </a>
-      </div>
-    `;
+    const actions = document.createElement("div");
+    actions.className = "actions";
 
+    const link = document.createElement("a");
+    link.href = proj.link;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = proj.link.includes("github.com") ? "GitHub" : "Ver Projeto";
+    actions.appendChild(link);
+
+    card.append(titulo, descricao, tech, actions);
     container.appendChild(card);
   });
 }

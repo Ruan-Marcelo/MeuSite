@@ -467,6 +467,10 @@ form .btn-enviar input[type="submit"] {
   cursor: pointer;
   transition: 0.2s;
 }
+form .btn-enviar input[type="submit"]:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
 /* ESTILO DO RODAPÉ */
 footer {
   padding: 60px 4%;
@@ -535,6 +539,11 @@ footer .line-footer p a {
   padding: 2px 6px;
   border-radius: 6px;
   font-size: 20px;
+}
+.sem-resultados {
+  color: var(--muted);
+  text-align: center;
+  width: 100%;
 }
 .sr-only {
   position: absolute;
