@@ -4,6 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000" />
+    <meta
+      name="description"
+      content="Portfólio de Ruan Marcelo, desenvolvedor Full Stack de Ribeirão Preto especializado em Angular, .NET, C#, APIs REST e SQL Server."
+    />
+    <meta
+      name="keywords"
+      content="Ruan Marcelo, desenvolvedor full stack, programador Ribeirão Preto, Angular, .NET, C#, SQL Server, portfólio dev"
+    />
+    <meta name="author" content="Ruan Marcelo Ramacioti Luz" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://zruanzito.com.br/" />
+    <meta
+      property="og:title"
+      content="Ruan Marcelo | Desenvolvedor Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Conheça os projetos, certificações e habilidades de Ruan Marcelo em Angular, .NET, C#, APIs REST e SQL Server."
+    />
+    <meta
+      property="og:image"
+      content="https://zruanzito.com.br/imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ruan Marcelo | Desenvolvedor Full Stack"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfólio de desenvolvedor Full Stack com projetos em Angular, .NET, C# e SQL Server."
+    />
+    <meta
+      name="twitter:image"
+      content="https://zruanzito.com.br/imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
+    />
     <!-- Código da fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +62,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <title>Ruan Marcelo</title>
+    <title>Ruan Marcelo | Desenvolvedor Full Stack</title>
   </head>
   <body>
     <header>
@@ -34,11 +72,11 @@
       </div>
       <div class="interface">
         <div class="logo">
-          <a href="#">
+          <a href="/" aria-label="Página inicial de Ruan Marcelo">
             <img
               class="resp"
               src="./imagens/Captura de tela 2024-08-09 131238.png"
-              alt="logo do meu site"
+              alt="Logo de Ruan Marcelo"
             />
           </a>
         </div>
@@ -72,7 +110,7 @@
           <ul>
             <li><a href="#Especialidades">Especialidades</a></li>
             <li><a href="#Sobre">Sobre mim</a></li>
-            <li><a href="./Contato/contato.html">Contato</a></li>
+            <li><a href="#Contato">Contato</a></li>
             <li><a href="#Projetos">Projetos</a></li>
             <li>
               <a href="./MinhasCertificações/index.html">Certificações</a>
@@ -111,7 +149,7 @@
             <div class="img-topo-site">
               <img
                 src="./imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
-                alt="Foto RUAN"
+                alt="Foto de Ruan Marcelo"
                 class="img-responsive"
               />
             </div>
@@ -169,7 +207,7 @@
             <div class="img-sobre">
               <img
                 src="./imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png"
-                alt="Foto RUAN"
+                alt="Foto de Ruan Marcelo"
                 class="img-responsive"
               />
             </div>
@@ -194,6 +232,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="instagram"
+                  aria-label="Instagram de Ruan Marcelo"
                 >
                   <i class="bi bi-instagram"></i>
                 </a>
@@ -203,6 +242,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="github"
+                  aria-label="GitHub de Ruan Marcelo"
                 >
                   <i class="bi bi-github"></i>
                 </a>
@@ -212,6 +252,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="linkedin"
+                  aria-label="LinkedIn de Ruan Marcelo"
                 >
                   <i class="bi bi-linkedin"></i>
                 </a>
@@ -230,7 +271,8 @@
           <h2 class="titulo">MEUS <span>PROJETOS.</span></h2>
 
           <div class="filtros">
-            <select id="filtro-tech">
+            <label class="sr-only" for="filtro-tech">Filtrar por tecnologia</label>
+            <select id="filtro-tech" aria-label="Filtrar projetos por tecnologia">
               <option value="all">Todas tecnologias</option>
               <option value="Angular">Angular</option>
               <option value="Tailwind CSS">Tailwind CSS</option>
@@ -239,7 +281,8 @@
               <option value="PHP">PHP</option>
             </select>
 
-            <select id="ordenacao">
+            <label class="sr-only" for="ordenacao">Ordenar projetos</label>
+            <select id="ordenacao" aria-label="Ordenar projetos">
               <option value="default">Ordenação padrão</option>
               <option value="destaque">Destaques Primeiro</option>
               <option value="frontend">Front-End</option>
@@ -261,21 +304,33 @@
             <input
               type="text"
               id="nome"
+              name="nome"
               placeholder="Seu Nome Completo:"
+              autocomplete="name"
               required
             />
 
-            <input type="email" id="email" placeholder="Seu EMAIL:" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Seu EMAIL:"
+              autocomplete="email"
+              required
+            />
 
             <input
-              type="text"
+              type="tel"
               id="celular"
+              name="celular"
               placeholder="Seu CELULAR:"
+              autocomplete="tel"
               required
             />
 
             <textarea
               id="mensagem"
+              name="mensagem"
               placeholder="Sua mensagem:"
               required
             ></textarea>
@@ -306,6 +361,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="instagram"
+                aria-label="Instagram de Ruan Marcelo"
               >
                 <i class="bi bi-instagram"></i>
               </a>
@@ -315,6 +371,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="github"
+                aria-label="GitHub de Ruan Marcelo"
               >
                 <i class="bi bi-github"></i>
               </a>
@@ -324,6 +381,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="linkedin"
+                aria-label="LinkedIn de Ruan Marcelo"
               >
                 <i class="bi bi-linkedin"></i>
               </a>
@@ -350,7 +408,36 @@
     </footer>
     <!-- rodapé -->
 
-    <script src="./assets/JS/menu.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ruan Marcelo Ramacioti Luz",
+        "url": "https://zruanzito.com.br/",
+        "image": "https://zruanzito.com.br/imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png",
+        "jobTitle": "Desenvolvedor Full Stack",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ribeirão Preto",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "knowsAbout": [
+          "Angular",
+          ".NET",
+          "C#",
+          "SQL Server",
+          "APIs REST",
+          "JavaScript"
+        ],
+        "sameAs": [
+          "https://github.com/Ruan-Marcelo",
+          "https://www.linkedin.com/in/ruan-marcelo/",
+          "https://www.instagram.com/ruan.luzzz/"
+        ]
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="./assets/JS/menu.js" defer></script>
   </body>
 </html>
