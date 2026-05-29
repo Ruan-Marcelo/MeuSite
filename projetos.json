@@ -68,6 +68,14 @@
     "destaque": true
   },
   {
+    "titulo": "Projetos em Python",
+    "descricao": "Projetos desenvolvidos em Python para estudo e prática.",
+    "tecnologias": ["Python", "Django", "Flask"],
+    "link": "https://github.com/Ruan-Marcelo/Python-Projetos.git",
+    "tipo": "backend",
+    "destaque": true
+  },
+  {
     "titulo": "Landing Page de Buffet",
     "descricao": "Landing page desenvolvida para apresentação de serviços de buffet.",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
