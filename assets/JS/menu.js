@@ -175,17 +175,17 @@ function renderizar(lista) {
 
   lista.forEach((proj) => {
     const card = document.createElement("div");
-    card.classList.add("projeto-card");
+    card.classList.add("projeto-card", "card", "h-100");
 
     if (proj.destaque) {
       const badge = document.createElement("span");
-      badge.className = "badge";
+    badge.className = "badge rounded-pill";
       badge.textContent = "Destaque";
       card.appendChild(badge);
     }
 
     const tipo = document.createElement("span");
-    tipo.className = `projeto-tipo tipo-${proj.tipo}`;
+    tipo.className = `projeto-tipo tipo-${proj.tipo} rounded-pill`;
     tipo.textContent =
       {
         frontend: "Front-end",
@@ -204,13 +204,13 @@ function renderizar(lista) {
 
     proj.tecnologias.forEach((item) => {
       const tag = document.createElement("span");
-      tag.className = "tag";
+      tag.className = "tag rounded-pill";
       tag.textContent = item;
       tech.appendChild(tag);
     });
 
     const actions = document.createElement("div");
-    actions.className = "actions";
+    actions.className = "actions mt-auto";
 
     const link = document.createElement("a");
     link.href = proj.link;

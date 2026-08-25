@@ -81,10 +81,8 @@ body {
   margin: 0 auto;
   width: min(100% - 32px, 1280px);
 }
-.flex {
-  display: flex;
-}
-.btn-contato button {
+.btn-contato button,
+.site-btn {
   padding: 10px 40px;
   font-size: 18px;
   font-weight: 600;
@@ -93,7 +91,7 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: 0.2s;
-  color: #020617;
+  color: #fff;
 }
 h2.titulo {
   color: var(--text);
@@ -104,18 +102,16 @@ h2.titulo span {
   color: var(--accent);
 }
 button:hover,
-form .btn-enviar input:hover {
+form .btn-enviar input:hover,
+.site-btn:hover {
   box-shadow: none;
   transform: translateY(-2px);
+  background: var(--primary-strong);
+  color: #fff;
 }
 
 header {
   padding: 40px 4%;
-}
-header > .interface {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 header a {
   color: var(--muted);
@@ -538,12 +534,8 @@ footer .line-footer p a {
 }
 
 .filtros {
-  display: flex;
   gap: 12px;
   margin: 0 auto 30px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -558,6 +550,10 @@ footer .line-footer p a {
   padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
+}
+.filtros .form-select {
+  width: auto;
+  min-width: 190px;
 }
 .badge {
   background: var(--primary);

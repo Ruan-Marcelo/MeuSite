@@ -44,7 +44,6 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="./assets/CSS/styles.css" />
     <link rel="canonical" href="https://zruanzito.com.br/" />
     <link
       rel="shortcut icon"
@@ -56,9 +55,14 @@
       rel="stylesheet"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="./assets/CSS/styles.css" />
 
     <title>Ruan Marcelo | Desenvolvedor Full Stack</title>
   </head>
@@ -68,7 +72,7 @@
         <span class="fixo"> </span>
         <span class="dinamico"></span>
       </div>
-      <div class="interface">
+      <div class="interface container-xxl d-flex align-items-center justify-content-between">
         <div class="logo">
           <a href="/" aria-label="Página inicial de Ruan Marcelo">
             <span class="brand-logo">Ruan Marcelo</span>
@@ -86,7 +90,7 @@
         </nav>
         <div class="btn-contato">
           <a href="#Contato">
-            <button>Contato</button>
+            <button class="btn site-btn">Contato</button>
           </a>
         </div>
       </div>
@@ -115,8 +119,8 @@
 
     <main>
       <section class="topo-do-site">
-        <div class="interface">
-          <div class="flex">
+        <div class="interface container-xxl">
+          <div class="flex d-flex">
             <div class="txt-topo-site">
               <h1>
                 <span>RUAN MARCELO</span><br />
@@ -130,7 +134,7 @@
 
               <div class="btn-contato">
                 <a href="#Contato">
-                  <button>Fale comigo</button>
+                  <button class="btn site-btn">Fale comigo</button>
                 </a>
               </div>
             </div>
@@ -139,10 +143,10 @@
         </div>
       </section>
       <section id="Especialidades" class="especialidades">
-        <div class="interface">
+        <div class="interface container-xxl">
           <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
 
-          <div class="flex">
+          <div class="flex d-flex">
             <div class="especialidades-box">
               <i class="bi bi-code-slash"></i>
               <h3>Full Stack Development</h3>
@@ -177,8 +181,8 @@
       </section>
 
       <section id="Sobre" class="sobre">
-        <div class="interface">
-          <div class="flex">
+        <div class="interface container-xxl">
+          <div class="flex d-flex">
             <div class="txt-sobre">
               <h2>MUITO PRAZER,<span>SOU RUAN MARCELO.</span></h2>
               <p>
@@ -229,7 +233,7 @@
       </section>
 
       <section id="Projetos" class="portifolio">
-        <div class="interface">
+        <div class="interface container-xxl">
           <div class="portfolio-heading">
             <p class="eyebrow">Projetos</p>
             <h2 class="titulo">MEUS <span>PROJETOS.</span></h2>
@@ -239,9 +243,9 @@
             </p>
           </div>
 
-          <div class="filtros">
+          <div class="filtros d-flex flex-wrap justify-content-center align-items-center">
             <label class="sr-only" for="filtro-tech">Filtrar por tecnologia</label>
-            <select id="filtro-tech" aria-label="Filtrar projetos por tecnologia">
+            <select class="form-select" id="filtro-tech" aria-label="Filtrar projetos por tecnologia">
               <option value="all">Todas tecnologias</option>
               <option value="Angular">Angular</option>
               <option value="Tailwind CSS">Tailwind CSS</option>
@@ -252,7 +256,7 @@
             </select>
 
             <label class="sr-only" for="ordenacao">Ordenar projetos</label>
-            <select id="ordenacao" aria-label="Ordenar projetos">
+            <select class="form-select" id="ordenacao" aria-label="Ordenar projetos">
               <option value="default">Ordenação padrão</option>
               <option value="destaque">Destacados primeiro</option>
               <option value="frontend">Front-End</option>
@@ -261,16 +265,17 @@
             </select>
           </div>
 
-          <div class="flex" id="projects-container">
+          <div class="flex d-flex" id="projects-container">
           </div>
         </div>
       </section>
 
       <section id="Contato" class="formulario">
-        <div class="interface">
+        <div class="interface container-xxl">
           <h2 class="titulo">Fale <span>COMIGO.</span></h2>
-          <form id="form-contato">
+          <form class="d-flex flex-column" id="form-contato">
             <input
+              class="form-control"
               type="text"
               id="nome"
               name="nome"
@@ -280,6 +285,7 @@
             />
 
             <input
+              class="form-control"
               type="email"
               id="email"
               name="email"
@@ -289,6 +295,7 @@
             />
 
             <input
+              class="form-control"
               type="tel"
               id="celular"
               name="celular"
@@ -298,6 +305,7 @@
             />
 
             <textarea
+              class="form-control"
               id="mensagem"
               name="mensagem"
               placeholder="Sua mensagem:"
@@ -305,7 +313,7 @@
             ></textarea>
 
             <div class="btn-enviar">
-              <input type="submit" value="ENVIAR" />
+              <input class="btn site-btn" type="submit" value="ENVIAR" />
             </div>
           </form>
           <div id="toast" class="toast">
@@ -315,9 +323,9 @@
       </section>
     </main>
     <footer>
-      <div class="interface">
+      <div class="interface container-xxl">
         <div class="line-footer">
-          <div class="flex">
+          <div class="flex d-flex">
             <div class="logo-footer">
               <span class="brand-logo">Ruan Marcelo</span>
             </div>

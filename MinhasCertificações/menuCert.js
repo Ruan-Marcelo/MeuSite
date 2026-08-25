@@ -59,7 +59,7 @@ function renderizarCertificacoes(data) {
 
   data.forEach((cert) => {
     const card = document.createElement("article");
-    card.className = "cert-card";
+    card.className = "cert-card card h-100";
 
     card.innerHTML = `
       <div class="cert-top">
@@ -73,9 +73,9 @@ function renderizarCertificacoes(data) {
 
       <h3>${cert.titulo}</h3>
 
-      <div class="cert-meta">
-        <span>${cert.instituicao}</span>
-        <span>${cert.data}</span>
+      <div class="cert-meta d-flex flex-wrap">
+        <span class="rounded-pill">${cert.instituicao}</span>
+        <span class="rounded-pill">${cert.data}</span>
       </div>
 
       <p>${cert.descricao}</p>

@@ -15,7 +15,6 @@ header {
 
 header > .interface {
   align-items: center;
-  display: flex;
   justify-content: space-between;
 }
 
@@ -143,8 +142,6 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-stats {
-  display: flex;
-  flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
 }
@@ -169,7 +166,6 @@ header nav.menu-desktop a:hover {
 
 .section-heading {
   align-items: center;
-  display: flex;
   gap: 18px;
   justify-content: space-between;
   margin-bottom: 28px;
@@ -193,6 +189,7 @@ header nav.menu-desktop a:hover {
   color: #fff;
   cursor: pointer;
   padding: 12px 14px;
+  width: auto;
 }
 
 .card-container {
