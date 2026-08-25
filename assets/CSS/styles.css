@@ -5,9 +5,9 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --bg: #14091f;
-  --surface: #21102f;
-  --surface-soft: #2a173a;
+  --bg: #000;
+  --surface: #0b0b0f;
+  --surface-soft: #15101b;
   --text: #f8fafc;
   --muted: #d8c8e8;
   --primary: #7c3aed;
@@ -24,11 +24,10 @@ body {
   min-height: 100vh;
 }
 .barra {
-  background-color: #0000006b;
+  background-color: #000;
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 6px 14px;
-  backdrop-filter: blur(10px);
   display: flex;
   position: fixed;
   top: 20px;
@@ -124,6 +123,14 @@ header a {
   display: inline-block;
   transition: 0.2s;
 }
+.brand-logo {
+  color: var(--accent);
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
 header nav.menu-desktop a:hover {
   color: #fff;
   transform: scale(1.2);
@@ -141,7 +148,7 @@ header nav.menu-desktop ul li {
   cursor: pointer;
 }
 .menu-mobile {
-  background-color: #05070d;
+  background-color: #000;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -322,13 +329,13 @@ section.especialidades .flex {
   padding: 6px 10px;
 }
 .tipo-frontend {
-  background: #2a173a;
+  background: #15101b;
 }
 .tipo-backend {
-  background: #321a49;
+  background: #15101b;
 }
 .tipo-fullstack {
-  background: #3b1d57;
+  background: #15101b;
 }
 
 .tech {
@@ -336,7 +343,7 @@ section.especialidades .flex {
 }
 .tech span {
   display: inline-block;
-  background: #2a173a;
+  background: #15101b;
   color: #eadcff;
   padding: 6px 10px;
   border-radius: 20px;
@@ -436,7 +443,7 @@ section.sobre .flex {
 }
 
 .btn-social a.instagram {
-  background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+  background: var(--primary);
 }
 
 .btn-social a.github {
@@ -501,7 +508,7 @@ form .btn-enviar input[type="submit"]:disabled {
 }
 footer {
   padding: 60px 4%;
-  background: #100719;
+  background: #000;
   border-top: 1px solid var(--border);
 }
 footer .flex {

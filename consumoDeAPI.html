@@ -27,21 +27,12 @@
 
     <style>
       :root {
-        --bg: #14091f;
-        --card: #21102f;
+        --bg: #000;
+        --card: #0b0b0f;
         --border: #3b2451;
         --text: #e6edf3;
         --accent: #7c3aed;
         --muted: #d8c8e8;
-      }
-
-      .light {
-        --bg: #f6f8fa;
-        --card: #fff;
-        --border: #d0d7de;
-        --text: #24292f;
-        --accent: #0969da;
-        --muted: #57606a;
       }
 
       * {
@@ -72,14 +63,6 @@
       header a {
         color: var(--text);
         text-decoration: none;
-      }
-
-      .theme {
-        cursor: pointer;
-        background: var(--card);
-        padding: 8px 15px;
-        border-radius: 20px;
-        border: 1px solid var(--border);
       }
 
       .search {
@@ -261,7 +244,6 @@
       <h1>GitHub Dashboard</h1>
 
       <a href="./index.html">Voltar ao portfólio</a>
-      <button class="theme" type="button" onclick="toggleTheme()">Tema</button>
     </header>
 
     <div class="search">
@@ -301,10 +283,6 @@
     <ul id="repos"></ul>
 
     <script>
-      function toggleTheme() {
-        document.body.classList.toggle("light");
-      }
-
 
       const languageColors = {
         JavaScript: "#f1e05a",

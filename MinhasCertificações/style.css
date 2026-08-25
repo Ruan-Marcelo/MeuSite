@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: #14091f;
+  background: #000;
   color: #f8fafc;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -41,9 +41,13 @@ header nav.menu-desktop a:hover {
   transform: translateY(-2px);
 }
 
-.logo img,
-.logo-footer img {
-  max-width: 120px;
+.brand-logo {
+  color: #a855f7;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .btn-abrir-menu {
@@ -58,7 +62,7 @@ header nav.menu-desktop a:hover {
 }
 
 .menu-mobile {
-  background: #14091f;
+  background: #000;
   height: 100vh;
   overflow: hidden;
   position: fixed;
@@ -146,7 +150,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-stats span {
-  background: rgba(17, 24, 39, 0.82);
+  background: #0b0b0f;
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 8px;
   color: #cbd5e1;
@@ -183,7 +187,7 @@ header nav.menu-desktop a:hover {
 }
 
 #filtro-instituicao {
-  background: #111827;
+  background: #0b0b0f;
   border: 1px solid rgba(148, 163, 184, 0.28);
   border-radius: 8px;
   color: #fff;
@@ -198,7 +202,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-card {
-  background: #21102f;
+  background: #0b0b0f;
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 8px;
   min-height: 260px;
@@ -249,7 +253,7 @@ header nav.menu-desktop a:hover {
 
 .cert-icon {
   align-items: center;
-  background: #2a173a;
+  background: #15101b;
   border: 1px solid rgba(216, 200, 232, 0.18);
   border-radius: 8px;
   display: flex;
@@ -280,7 +284,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-meta span {
-  background: rgba(15, 23, 42, 0.72);
+  background: #15101b;
   border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: 999px;
   color: #cbd5e1;
