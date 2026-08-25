@@ -213,27 +213,28 @@
         grid-template-columns: repeat(30, 12px);
         gap: 4px;
         margin-top: 10px;
+        min-height: 92px;
       }
 
       .day {
         width: 12px;
         height: 12px;
-        background: #161b22;
+        background: #17121f;
         border-radius: 2px;
-        border: 1px solid rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(168, 85, 247, 0.16);
       }
 
       .level1 {
-        background: #0e4429;
+        background: #3b1d57;
       }
       .level2 {
-        background: #006d32;
+        background: #5b21b6;
       }
       .level3 {
-        background: #26a641;
+        background: #7c3aed;
       }
       .level4 {
-        background: #39d353;
+        background: #a855f7;
       }
 
       .empty-state {
@@ -345,6 +346,8 @@
           }
 
           const events = await fetchGitHubEvents(user);
+          const repoCommits = await fetchRepositoryCommits(repos);
+          const commits = mergeCommits(collectEventCommits(events), repoCommits);
 
           repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
@@ -356,9 +359,9 @@
 
           calculateScore(repos);
 
-          renderRecentCommits(events);
+          renderRecentCommits(commits);
 
-          generateHeatmap(events);
+          generateHeatmap(commits);
         } catch {
           feedback.textContent = "Não foi possível consultar a API do GitHub agora.";
         }
@@ -379,6 +382,66 @@
         }
       }
 
+      async function fetchRepositoryCommits(repos) {
+        const since = new Date();
+        since.setDate(since.getDate() - 180);
+
+        const publicRepos = repos
+          .sort((a, b) => new Date(b.pushed_at || b.updated_at) - new Date(a.pushed_at || a.updated_at))
+          .slice(0, 12);
+
+        const results = await Promise.allSettled(
+          publicRepos.map(async (repo) => {
+            const response = await fetch(
+              `${repo.commits_url.replace("{/sha}", "")}?per_page=30&author=${repo.owner.login}&since=${since.toISOString()}`,
+            );
+
+            if (!response.ok) return [];
+
+            const commits = await response.json();
+            if (!Array.isArray(commits)) return [];
+
+            return commits.map((item) => ({
+              repo: repo.full_name,
+              message: item.commit?.message || "Commit sem mensagem",
+              sha: item.sha,
+              url: item.html_url,
+              date: item.commit?.author?.date || item.commit?.committer?.date,
+            }));
+          }),
+        );
+
+        return results
+          .filter((result) => result.status === "fulfilled")
+          .flatMap((result) => result.value)
+          .filter((commit) => commit.sha && commit.date);
+      }
+
+      function collectEventCommits(events) {
+        return getCommitEvents(events).flatMap((event) =>
+          event.payload.commits.map((commit) => ({
+            repo: event.repo.name,
+            message: commit.message,
+            sha: commit.sha,
+            url: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
+            date: event.created_at,
+          })),
+        );
+      }
+
+      function mergeCommits(...commitGroups) {
+        const commitsBySha = new Map();
+
+        commitGroups.flat().forEach((commit) => {
+          if (!commit.sha || !commit.date || commitsBySha.has(commit.sha)) return;
+          commitsBySha.set(commit.sha, commit);
+        });
+
+        return [...commitsBySha.values()].sort(
+          (a, b) => new Date(b.date) - new Date(a.date),
+        );
+      }
+
 
       function getCommitEvents(events) {
         return events.filter(
@@ -389,16 +452,16 @@
         );
       }
 
-      function generateHeatmap(events = []) {
+      function generateHeatmap(commits = []) {
         const heatmap = document.getElementById("heatmap");
 
         heatmap.innerHTML = "";
         const commitsByDate = new Map();
 
-        getCommitEvents(events).forEach((event) => {
-          const date = new Date(event.created_at).toISOString().slice(0, 10);
+        commits.forEach((commit) => {
+          const date = new Date(commit.date).toISOString().slice(0, 10);
           const total = commitsByDate.get(date) || 0;
-          commitsByDate.set(date, total + event.payload.commits.length);
+          commitsByDate.set(date, total + 1);
         });
 
         const today = new Date();
@@ -426,27 +489,9 @@
         });
       }
 
-      function renderRecentCommits(events) {
+      function renderRecentCommits(commits = []) {
         const analysis = document.getElementById("analysis");
-        const commitsBySha = new Map();
-
-        getCommitEvents(events).forEach((event) => {
-          event.payload.commits.forEach((commit) => {
-            if (!commit.sha || commitsBySha.has(commit.sha)) return;
-
-            commitsBySha.set(commit.sha, {
-              repo: event.repo.name,
-              message: commit.message,
-              sha: commit.sha,
-              url: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
-              date: event.created_at,
-            });
-          });
-        });
-
-        const commits = [...commitsBySha.values()]
-          .sort((a, b) => new Date(b.date) - new Date(a.date))
-          .slice(0, 6);
+        const recentCommits = commits.slice(0, 6);
 
         const oldList = analysis.querySelector(".commit-list");
         oldList?.remove();
@@ -454,13 +499,13 @@
         const list = document.createElement("div");
         list.className = "commit-list";
 
-        if (!commits.length) {
+        if (!recentCommits.length) {
           list.innerHTML = '<p class="empty-state">Nenhum commit público recente encontrado.</p>';
           analysis.appendChild(list);
           return;
         }
 
-        commits.forEach((commit) => {
+        recentCommits.forEach((commit) => {
           const item = document.createElement("div");
           item.className = "commit-item";
 
