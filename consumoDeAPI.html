@@ -24,16 +24,15 @@
     <link rel="canonical" href="https://zruanzito.com.br/consumoDeAPI.html" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
     <style>
       :root {
-        --bg: #0d1117;
-        --card: #161b22;
-        --border: #30363d;
+        --bg: #14091f;
+        --card: #21102f;
+        --border: #3b2451;
         --text: #e6edf3;
-        --accent: #2f81f7;
-        --muted: #8b949e;
+        --accent: #7c3aed;
+        --muted: #d8c8e8;
       }
 
       .light {
@@ -60,13 +59,6 @@
         flex-direction: column;
         align-items: center;
         transition: 0.3s;
-      }
-
-      #bg3d {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
       }
 
       header {
@@ -228,7 +220,6 @@
         }
       }
 
-      /* heatmap */
 
       #heatmap {
         display: grid;
@@ -266,8 +257,6 @@
   </head>
 
   <body>
-    <canvas id="bg3d"></canvas>
-
     <header>
       <h1>GitHub Dashboard</h1>
 
@@ -312,55 +301,10 @@
     <ul id="repos"></ul>
 
     <script>
-      const canvas = document.getElementById("bg3d");
-
-      const scene = new THREE.Scene();
-
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000,
-      );
-
-      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-
-      camera.position.z = 5;
-
-      const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
-
-      const material = new THREE.MeshStandardMaterial({ color: 0x2f81f7 });
-
-      const torus = new THREE.Mesh(geometry, material);
-
-      scene.add(torus);
-
-      const light = new THREE.PointLight(0xffffff, 1);
-
-      light.position.set(5, 5, 5);
-
-      scene.add(light);
-
-      function animate() {
-        requestAnimationFrame(animate);
-
-        torus.rotation.x += 0.01;
-        torus.rotation.y += 0.01;
-
-        renderer.render(scene, camera);
-      }
-
-      animate();
-
-      /* theme */
-
       function toggleTheme() {
         document.body.classList.toggle("light");
       }
 
-      /* language colors */
 
       const languageColors = {
         JavaScript: "#f1e05a",
@@ -376,7 +320,6 @@
       let langChart;
       let starsChart;
 
-      /* API */
 
       async function getApi() {
         const user = document.getElementById("user").value.trim();
@@ -454,7 +397,6 @@
         }
       }
 
-      /* heatmap */
 
       function getCommitEvents(events) {
         return events.filter(
@@ -504,17 +446,24 @@
 
       function renderRecentCommits(events) {
         const analysis = document.getElementById("analysis");
-        const commits = getCommitEvents(events)
-          .flatMap((event) =>
-            event.payload.commits.map((commit) => ({
+        const commitsBySha = new Map();
+
+        getCommitEvents(events).forEach((event) => {
+          event.payload.commits.forEach((commit) => {
+            if (!commit.sha || commitsBySha.has(commit.sha)) return;
+
+            commitsBySha.set(commit.sha, {
               repo: event.repo.name,
               message: commit.message,
-              url: commit.url
-                ?.replace("api.github.com/repos", "github.com")
-                .replace("/commits/", "/commit/"),
+              sha: commit.sha,
+              url: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
               date: event.created_at,
-            })),
-          )
+            });
+          });
+        });
+
+        const commits = [...commitsBySha.values()]
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
           .slice(0, 6);
 
         const oldList = analysis.querySelector(".commit-list");
@@ -538,7 +487,10 @@
 
           const meta = document.createElement("span");
           meta.className = "commit";
-          meta.textContent = `${commit.repo} - ${new Date(commit.date).toLocaleDateString("pt-BR")}`;
+          meta.textContent = `${commit.repo} - ${new Date(commit.date).toLocaleString("pt-BR", {
+            dateStyle: "short",
+            timeStyle: "short",
+          })}`;
 
           item.append(title, meta);
 
@@ -547,7 +499,7 @@
             link.href = commit.url;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
-            link.textContent = "Ver commit";
+            link.textContent = `Abrir commit ${commit.sha.slice(0, 7)}`;
             item.appendChild(link);
           }
 
@@ -557,7 +509,6 @@
         analysis.appendChild(list);
       }
 
-      /* repos */
 
       function renderRepos(repos) {
         const reposContainer = document.getElementById("repos");
@@ -573,13 +524,13 @@
 
           li.innerHTML = `
 
-<div class="rank">🏆 #${i + 1}</div>
+<div class="rank">#${i + 1}</div>
 
 <strong>${repo.name}</strong>
 
 <div class="info">
-<span>⭐ ${repo.stargazers_count}</span>
-<span>📦 ${repo.language ?? "N/A"}</span>
+<span>${repo.stargazers_count} stars</span>
+<span>${repo.language ?? "N/A"}</span>
 </div>
 
 <div class="commit">
@@ -595,7 +546,6 @@ Atualizado em ${new Date(repo.updated_at).toLocaleDateString("pt-BR")}
         gsap.from(".repo", { opacity: 0, y: 40, stagger: 0.1 });
       }
 
-      /* charts */
 
       function createCharts(repos) {
         let langs = {};
@@ -650,7 +600,6 @@ Atualizado em ${new Date(repo.updated_at).toLocaleDateString("pt-BR")}
         });
       }
 
-      /* profile analysis */
 
       function analyzeProfile(repos) {
         let stars = 0;
@@ -678,7 +627,6 @@ Possui ${repos.length} repositórios e ${stars} estrelas acumuladas.`;
 `;
       }
 
-      /* score */
 
       function calculateScore(repos) {
         let score = 0;
