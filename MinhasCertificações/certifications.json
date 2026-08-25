@@ -3,7 +3,7 @@
     "titulo": "Fundamentos de Desenvolvimento Web",
     "instituicao": "Cisco Networking Academy",
     "data": "Março 2026",
-    "descricao": " desenvolvimento, implantação e teste de websites",
+    "descricao": "Criação, publicação e teste de páginas web.",
     "imagem": "ibm.png",
     "icone": "html5-css31-removebg-preview.png"
   },
@@ -11,7 +11,7 @@
     "titulo": "Cybersecurity Fundamentals",
     "instituicao": "Cisco Networking Academy",
     "data": "Março 2026",
-    "descricao": "tipos de ataques, engenharia social, estudos de caso, estratégias gerais de segurança",
+    "descricao": "Ataques comuns, engenharia social e fundamentos de proteção.",
     "imagem": "ibm.png",
     "icone": "ciber.png"
   },
@@ -19,7 +19,7 @@
     "titulo": "Stakaholders",
     "instituicao": "Cisco Networking Academy",
     "data": "Março 2026",
-    "descricao": "Envolver as partes interessadas para o sucesso",
+    "descricao": "Mapeamento de pessoas envolvidas e alinhamento de expectativas.",
     "imagem": "Cisco_logo_blue_2016.svg.png",
     "icone": "i_03_04_l.png"
   },
@@ -27,7 +27,7 @@
     "titulo": "Foundational C# with Microsoft",
     "instituicao": "freeCodeCamp",
     "data": "Março 2026",
-    "descricao": "aprendi os fundamentos de C#",
+    "descricao": "Sintaxe, tipos, lógica, coleções e fundamentos da linguagem C#.",
     "imagem": "FreeCodeCamp_logo.png",
     "icone": "1673639331003.png"
   },
@@ -35,7 +35,7 @@
     "titulo": "Responsive Web Design",
     "instituicao": "freeCodeCamp",
     "data": "Agosto 2024",
-    "descricao": "Criação de sites responsivos utilizando HTML e CSS.",
+    "descricao": "HTML semântico, CSS responsivo e composição de páginas.",
     "imagem": "FreeCodeCamp_logo.png",
     "icone": "html5-css31-removebg-preview.png"
   },
@@ -43,7 +43,7 @@
     "titulo": "Cisco Get Connected",
     "instituicao": "Cisco Networking Academy",
     "data": "Junho 2024",
-    "descricao": "Fundamentos de internet e sistemas operacionais.",
+    "descricao": "Noções de internet, computadores, sistemas operacionais e colaboração online.",
     "imagem": "Cisco_logo_blue_2016.svg.png",
     "icone": "i_03_04_l.png"
   },
@@ -51,7 +51,7 @@
     "titulo": "HTML, CSS e JavaScript",
     "instituicao": "Fundação Bradesco",
     "data": "Setembro 2024",
-    "descricao": "Desenvolvimento web com HTML, CSS e JS.",
+    "descricao": "Estrutura HTML, estilos CSS e comportamento com JavaScript.",
     "imagem": "bradesco-icon-logo.png",
     "icone": "javascript.png"
   },
@@ -59,7 +59,7 @@
     "titulo": "Programação Orientada a Objetos",
     "instituicao": "Fundação Bradesco",
     "data": "Setembro 2024",
-    "descricao": "Conceitos de POO e boas práticas.",
+    "descricao": "Classes, objetos, encapsulamento, herança e organização de código.",
     "imagem": "bradesco-icon-logo.png",
     "icone": "Java-Logo.png"
   },
@@ -67,7 +67,7 @@
     "titulo": "Cloud Security",
     "instituicao": "Google Cloud",
     "data": "Junho 2024",
-    "descricao": "Segurança e dados na nuvem.",
+    "descricao": "Controles de segurança, proteção de dados e serviços em cloud.",
     "imagem": "googlelogo.png",
     "icone": "cloud.png"
   },
@@ -75,7 +75,7 @@
     "titulo": "IoT",
     "instituicao": "SENAI",
     "data": "Setembro 2024",
-    "descricao": "Integração de sistemas IoT.",
+    "descricao": "Sensores, conectividade e troca de dados entre dispositivos.",
     "imagem": "senai.png",
     "icone": "iot.png"
   },
@@ -83,7 +83,7 @@
     "titulo": "Power BI",
     "instituicao": "SENAI",
     "data": "Janeiro 2024",
-    "descricao": "Dashboards e análise de dados.",
+    "descricao": "Tratamento de dados, construção de dashboards e leitura de indicadores.",
     "imagem": "senai.png",
     "icone": "powerbi.png"
   },
@@ -91,7 +91,7 @@
     "titulo": "Cibersegurança na Nuvem",
     "instituicao": "SENAI",
     "data": "Julho 2024",
-    "descricao": "Segurança em cloud computing.",
+    "descricao": "Riscos, acesso, proteção e boas configurações em ambientes de nuvem.",
     "imagem": "senai.png",
     "icone": "cloud.png"
   },
@@ -99,7 +99,7 @@
     "titulo": "Python",
     "instituicao": "Fundação Bradesco",
     "data": "Setembro 2024",
-    "descricao": "Lógica e programação em Python.",
+    "descricao": "Variáveis, estruturas de decisão, repetição, funções e lógica com Python.",
     "imagem": "bradesco-icon-logo.png",
     "icone": "Python.png"
   },
@@ -107,7 +107,7 @@
     "titulo": "Android",
     "instituicao": "SENAI",
     "data": "Julho 2024",
-    "descricao": "Desenvolvimento mobile.",
+    "descricao": "Fundamentos de criação de aplicativos Android.",
     "imagem": "senai.png",
     "icone": "android.png"
   }

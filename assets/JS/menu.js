@@ -15,7 +15,6 @@ btnMenu?.addEventListener("click", () => {
 menu?.addEventListener("click", fecharMenu);
 overlay?.addEventListener("click", fecharMenu);
 
-// barra no topo
 const textos = [
   "Desenvolvedor Full-Stack",
   "Desenvolvedor Back-end",

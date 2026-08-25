@@ -1,7 +1,7 @@
 [
   {
     "titulo": "Article Hub",
-    "descricao": "Plataforma full stack para gerenciamento de artigos com autenticação JWT, construída com Angular, .NET e SQL Server.",
+    "descricao": "Cadastro, edição e publicação de artigos com login JWT, API em .NET e persistência em SQL Server.",
     "tecnologias": ["Angular", "ASP.NET", "SQL Server", "JavaScript", "C#"],
     "link": "https://github.com/Ruan-Marcelo/AngularDotNet-Articles",
     "tipo": "fullstack",
@@ -9,7 +9,7 @@
   },
   {
     "titulo": "Consumo de API GitHub",
-    "descricao": "Aplicação web que consome a API do GitHub para buscar usuários e repositórios.",
+    "descricao": "Busca perfis do GitHub, lista repositórios, mostra linguagens, stars e commits públicos recentes.",
     "tecnologias": ["JavaScript", "API REST"],
     "link": "./consumoDeAPI.html",
     "tipo": "frontend",
@@ -17,21 +17,21 @@
   },
   {
     "titulo": "Blog Management System",
-    "descricao": "Sistema de gerenciamento de blog com PHP e MySQL.",
+    "descricao": "Painel em PHP para criar, editar e manter posts usando MySQL.",
     "tecnologias": ["PHP", "MySQL", "Bootstrap"],
     "link": "http://apoiopet.kesug.com/",
     "tipo": "backend"
   },
   {
     "titulo": "Projetos em C# para estudo",
-    "descricao": "Projetos focados em lógica, engenharia de software e evolução contínua.",
+    "descricao": "Exercícios e pequenos sistemas em C# para praticar lógica, orientação a objetos e APIs.",
     "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/Csharp-Projetos.git",
     "tipo": "backend"
   },
   {
     "titulo": "LevelUp-TCC",
-    "descricao": "Ecommerce/Blog completo em ASP.NET com arquitetura limpa.",
+    "descricao": "Projeto de TCC com catálogo, blog, área administrativa e backend em ASP.NET.",
     "tecnologias": ["C#", "ASP.NET", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/LevelUp-TCC-SENAI-I3DESV.git",
     "tipo": "fullstack",
@@ -39,21 +39,21 @@
   },
   {
     "titulo": "Sistema De Tarefa API",
-    "descricao": "Web API com JWT, Entity Framework e integração com API de CEP.",
+    "descricao": "API de tarefas com autenticação JWT, Entity Framework e consulta de endereço por CEP.",
     "tecnologias": ["C#", "ASP.NET Core API", "SQL Server", "JWT"],
     "link": "https://github.com/Ruan-Marcelo/API-SistemaDeTarefas.git",
     "tipo": "backend"
   },
   {
     "titulo": "ASP.NET Core MVC Blog",
-    "descricao": "Blog completo em ASP.NET com arquitetura limpa.",
+    "descricao": "Blog em ASP.NET Core MVC com posts, categorias, autenticação e persistência em SQL Server.",
     "tecnologias": ["C#", "ASP.NET Core", "SQL Server", "Bootstrap", "JavaScript"],
     "link": "https://github.com/Ruan-Marcelo/aspnetcore9-blog-app.git",
     "tipo": "fullstack"
   },
   {
     "titulo": "Sistema de gestão de estoque ASP.NET Web API",
-    "descricao": "Gestão interna de estoque.",
+    "descricao": "API para controlar produtos, movimentações de estoque e autenticação de usuários.",
     "tecnologias": ["C#", "ASP.NET Web API", "SQL Server", "JWT", "JavaScript", "API REST"],
     "link": "https://github.com/Ruan-Marcelo/inventory-management-system-dotnet.git",
     "tipo": "backend",
@@ -61,7 +61,7 @@
   },
   {
     "titulo": "Loja Virtual para Alfaiataria",
-    "descricao": "Sistema de e-commerce desenvolvido para uma loja de alfaiataria.",
+    "descricao": "Vitrine estática para alfaiataria com páginas de produto, carrinho visual e layout responsivo.",
     "tecnologias": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
     "link": "https://ruan-marcelo.github.io/lojaStatic/index.html",
     "tipo": "frontend",
@@ -69,7 +69,7 @@
   },
   {
     "titulo": "Projetos em Python",
-    "descricao": "Projetos desenvolvidos em Python para estudo e prática.",
+    "descricao": "Repositório com automações, scripts e aplicações pequenas feitas em Python.",
     "tecnologias": ["Python", "Django", "Flask"],
     "link": "https://github.com/Ruan-Marcelo/Python-Projetos.git",
     "tipo": "backend",
@@ -77,7 +77,7 @@
   },
   {
     "titulo": "Landing Page de Buffet",
-    "descricao": "Landing page desenvolvida para apresentação de serviços de buffet.",
+    "descricao": "Página comercial para buffet com seções de serviços, contato e apresentação da marca.",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
     "link": "https://www.yruufesta.shop/",
     "tipo": "frontend"
