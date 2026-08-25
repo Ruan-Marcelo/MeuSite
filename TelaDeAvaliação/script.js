@@ -5,12 +5,12 @@ const defaultRatingIndex = 0;
 let currentRatingIndex = 0;
 
 const ratings = [
-  { emoji: "😎", name: "Classifique o desempenho do site" },
-  { emoji: "😔", name: "Muito ruim" },
-  { emoji: "🙁", name: "Ruim" },
-  { emoji: "🙂", name: "Bom" },
-  { emoji: "🤩", name: "Muito bom" },
-  { emoji: "🥰", name: "Excelente" },
+  { emoji: "", name: "Classifique o desempenho do site" },
+  { emoji: "", name: "Muito ruim" },
+  { emoji: "", name: "Ruim" },
+  { emoji: "", name: "Bom" },
+  { emoji: "", name: "Muito bom" },
+  { emoji: "", name: "Excelente" },
 ];
 
 const checkSelectedStar = (star) => {

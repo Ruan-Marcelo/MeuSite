@@ -3,10 +3,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 32rem),
-    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.12), transparent 30rem),
-    #05070d;
+  background: #14091f;
   color: #f8fafc;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -55,13 +52,13 @@ header nav.menu-desktop a:hover {
 
 .btn-abrir-menu i,
 .menu-mobile .btn-fechar i {
-  color: #22d3ee;
+  color: #a855f7;
   cursor: pointer;
   font-size: 36px;
 }
 
 .menu-mobile {
-  background: #05070d;
+  background: #14091f;
   height: 100vh;
   overflow: hidden;
   position: fixed;
@@ -95,7 +92,7 @@ header nav.menu-desktop a:hover {
 }
 
 .menu-mobile nav ul li a:hover {
-  background: #2563eb;
+  background: #7c3aed;
   color: #020617;
 }
 
@@ -120,10 +117,10 @@ header nav.menu-desktop a:hover {
 }
 
 .eyebrow {
-  color: #22d3ee;
+  color: #a855f7;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -182,7 +179,7 @@ header nav.menu-desktop a:hover {
 }
 
 .titulo span {
-  color: #22d3ee;
+  color: #a855f7;
 }
 
 #filtro-instituicao {
@@ -201,7 +198,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-card {
-  background: linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(23, 32, 51, 0.92));
+  background: #21102f;
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 8px;
   min-height: 260px;
@@ -212,7 +209,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-card::before {
-  background: linear-gradient(90deg, #2563eb, #22d3ee);
+  background: #7c3aed;
   content: "";
   height: 3px;
   left: 0;
@@ -222,7 +219,7 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-card:hover {
-  box-shadow: 0 22px 42px rgba(37, 99, 235, 0.22);
+  box-shadow: none;
   transform: translateY(-6px);
 }
 
@@ -252,8 +249,8 @@ header nav.menu-desktop a:hover {
 
 .cert-icon {
   align-items: center;
-  background: rgba(34, 211, 238, 0.12);
-  border: 1px solid rgba(34, 211, 238, 0.24);
+  background: #2a173a;
+  border: 1px solid rgba(216, 200, 232, 0.18);
   border-radius: 8px;
   display: flex;
   height: 48px;

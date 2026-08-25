@@ -13,9 +13,7 @@ body {
   display: grid;
   place-content: center;
   font-family: Poppins, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(37, 99, 235, 0.25), transparent 34rem),
-    #05070d;
+  background: #14091f;
   padding: 2rem;
 }
 .container {
@@ -29,7 +27,7 @@ body {
   position: relative;
   overflow: hidden;
   background: rgba(17, 24, 39, 0.82);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
 }
 .container::after {
   z-index: -1;
@@ -44,9 +42,7 @@ body {
   margin-bottom: 1rem;
 }
 .emoji {
-  font-size: 2rem;
-  height: 20px;
-  margin-bottom: 1rem;
+  display: none;
 }
 .status {
   font-size: 2rem;
@@ -64,7 +60,7 @@ body {
   cursor: pointer;
 }
 .star:focus-visible {
-  outline: 2px solid #22d3ee;
+  outline: 2px solid #a855f7;
   outline-offset: 4px;
 }
 .star svg {
@@ -77,11 +73,11 @@ body {
 
 .selected svg,
 .selected ~ .star svg {
-  fill: #ffc107;
+  fill: #a855f7;
 }
 .star:hover svg,
 .star:hover ~ .star svg {
-  fill: gold;
+  fill: #a855f7;
 }
 .voltar {
   color: #7d7d7d;

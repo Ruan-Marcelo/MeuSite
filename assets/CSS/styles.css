@@ -1,4 +1,3 @@
-/* ESTILO GERAL */
 * {
   margin: 0;
   padding: 0;
@@ -6,28 +5,24 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --bg: #05070d;
-  --surface: #111827;
-  --surface-soft: #172033;
+  --bg: #14091f;
+  --surface: #21102f;
+  --surface-soft: #2a173a;
   --text: #f8fafc;
-  --muted: #cbd5e1;
-  --primary: #2563eb;
-  --primary-strong: #1d4ed8;
-  --accent: #22d3ee;
-  --border: rgba(148, 163, 184, 0.2);
+  --muted: #d8c8e8;
+  --primary: #7c3aed;
+  --primary-strong: #6d28d9;
+  --accent: #a855f7;
+  --border: rgba(216, 200, 232, 0.18);
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 32rem),
-    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.12), transparent 30rem),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
 }
-/* barra no topo site */
 .barra {
   background-color: #0000006b;
   border: 1px solid var(--border);
@@ -48,7 +43,7 @@ body {
   color: var(--accent);
   gap: 5px;
 
-  z-index: 999; /*em frente tudo */
+  z-index: 999;
 }
 
 .dinamico {
@@ -61,12 +56,12 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #111;
+  background: var(--surface);
   color: #fff;
   padding: 15px 20px;
   border-left: 4px solid var(--primary);
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.4s ease;
@@ -94,7 +89,7 @@ body {
   padding: 10px 40px;
   font-size: 18px;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: var(--primary);
   border: 0;
   border-radius: 30px;
   cursor: pointer;
@@ -111,11 +106,10 @@ h2.titulo span {
 }
 button:hover,
 form .btn-enviar input:hover {
-  box-shadow: 0 0 18px rgba(34, 211, 238, 0.35);
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
-/* ESTILO DO CABEÇALHO */
 header {
   padding: 40px 4%;
 }
@@ -141,7 +135,6 @@ header nav.menu-desktop ul li {
   display: inline-block;
   padding: 0 40px;
 }
-/* estilo do menu mobile */
 .btn-abrir-menu i {
   color: var(--accent);
   font-size: 40px;
@@ -196,14 +189,13 @@ header nav.menu-desktop ul li {
   z-index: 88888;
   display: none;
 }
-/* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
   padding: 40px 4%;
 }
 section.topo-do-site .flex {
   align-items: center;
-  justify-content: space-between;
-  gap: 90px;
+  justify-content: flex-start;
+  gap: 0;
 }
 .topo-do-site h1 {
   color: var(--text);
@@ -220,21 +212,14 @@ section.topo-do-site .flex {
   max-width: 620px;
 }
 
+.txt-topo-site {
+  max-width: 760px;
+}
+
 .topo-do-site .img-topo-site img {
   position: relative;
-  animation: flutuar 2s ease-in-out infinite alternate;
 }
 
-@keyframes flutuar {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 30px;
-  }
-}
-
-/* Estilos da especialidades */
 .btn-veja {
   display: inline-block;
   margin-top: 15px;
@@ -244,13 +229,13 @@ section.topo-do-site .flex {
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
   transition: 0.3s;
 }
 .btn-veja:hover {
   background: var(--primary-strong);
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 255, 0.4);
+  box-shadow: none;
 }
 section.especialidades {
   padding: 40px 4%;
@@ -260,7 +245,7 @@ section.especialidades .flex {
 }
 .especialidades .especialidades-box {
   color: var(--text);
-  background: rgba(17, 24, 39, 0.72);
+  background: var(--surface);
   border: 1px solid var(--border);
   padding: 32px;
   border-radius: 8px;
@@ -270,8 +255,8 @@ section.especialidades .flex {
 }
 
 .especialidades .especialidades-box:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+  transform: translateY(-4px);
+  box-shadow: none;
 }
 .especialidades .especialidades-box i {
   font-size: 70px;
@@ -285,13 +270,13 @@ section.especialidades .flex {
 .projeto-card {
   width: 100%;
   max-width: 360px;
-  background: linear-gradient(145deg, rgba(23, 32, 51, 0.96), rgba(10, 15, 28, 0.96));
+  background: var(--surface);
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: 8px;
 
   transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -299,7 +284,6 @@ section.especialidades .flex {
   min-height: 330px;
 }
 
-/* Efeito glow top */
 .projeto-card::before {
   content: "";
   position: absolute;
@@ -307,12 +291,12 @@ section.especialidades .flex {
   height: 3px;
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: var(--primary);
 }
 
 .projeto-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.28);
+  transform: translateY(-6px);
+  box-shadow: none;
 }
 
 .projeto-card h3 {
@@ -338,31 +322,29 @@ section.especialidades .flex {
   padding: 6px 10px;
 }
 .tipo-frontend {
-  background: rgba(34, 211, 238, 0.12);
+  background: #2a173a;
 }
 .tipo-backend {
-  background: rgba(37, 99, 235, 0.16);
+  background: #321a49;
 }
 .tipo-fullstack {
-  background: rgba(16, 185, 129, 0.14);
+  background: #3b1d57;
 }
 
-/* Tech tags mais bonitas */
 .tech {
   margin-top: auto;
 }
 .tech span {
   display: inline-block;
-  background: rgba(34, 211, 238, 0.12);
-  color: #7dd3fc;
+  background: #2a173a;
+  color: #eadcff;
   padding: 6px 10px;
   border-radius: 20px;
   margin: 4px 4px 0 0;
   font-size: 12px;
-  border: 1px solid rgba(125, 211, 252, 0.28);
+  border: 1px solid var(--border);
 }
 
-/* Botões */
 .actions a {
   align-items: center;
   display: inline-flex;
@@ -370,7 +352,7 @@ section.especialidades .flex {
   justify-content: center;
   margin-top: 15px;
   padding: 11px 16px;
-  border: 1px solid rgba(34, 211, 238, 0.36);
+  border: 1px solid var(--border);
   border-radius: 8px;
   color: #f8fafc;
   text-decoration: none;
@@ -379,8 +361,8 @@ section.especialidades .flex {
 }
 
 .actions a:hover {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #020617;
+  background: var(--primary);
+  color: #fff;
 }
 .portifolio .flex {
   gap: 22px;
@@ -397,7 +379,7 @@ section.especialidades .flex {
   color: var(--accent);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -407,16 +389,16 @@ section.especialidades .flex {
   line-height: 1.7;
   margin-top: 14px;
 }
-/* ESTILO DO SOBRE */
 section.sobre {
   padding: 80px 4%;
 }
 section.sobre .flex {
   align-items: center;
-  gap: 60px;
+  gap: 0;
 }
 .sobre .txt-sobre {
   color: var(--text);
+  max-width: 760px;
 }
 .sobre .txt-sobre h2 {
   font-size: 40px;
@@ -453,26 +435,22 @@ section.sobre .flex {
   text-decoration: none;
 }
 
-/* insta */
 .btn-social a.instagram {
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
 }
 
-/* Github */
 .btn-social a.github {
   background: #181717;
 }
 
-/* linkedin */
 .btn-social a.linkedin {
   background: #0a66c2;
 }
 
 .btn-social a:hover {
   transform: translateY(-5px) scale(1.08);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  box-shadow: none;
 }
-/* ESTILO DO FORMULARIO DE CONTATO */
 section.formulario {
   padding: 80px 4%;
 }
@@ -498,7 +476,7 @@ form textarea {
 form input:focus,
 form textarea:focus,
 .filtros select:focus {
-  outline: 2px solid rgba(34, 211, 238, 0.55);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 form textarea {
@@ -511,8 +489,8 @@ form .btn-enviar {
 }
 form .btn-enviar input[type="submit"] {
   width: 120px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #000;
+  background: var(--primary);
+  color: #fff;
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s;
@@ -521,22 +499,10 @@ form .btn-enviar input[type="submit"]:disabled {
   cursor: wait;
   opacity: 0.7;
 }
-/* ESTILO DO RODAPÉ */
 footer {
   padding: 60px 4%;
-  box-shadow: 0 0 40px 01px #ffffff0e;
-  border-top: 10px solid;
-  border-image: linear-gradient(
-      90deg,
-      #020617,
-      #0a0f2c,
-      #0b1f3a,
-      #0033ff,
-      #0055ff,
-      #007bff,
-      #00aaff
-    )
-    1;
+  background: #100719;
+  border-top: 1px solid var(--border);
 }
 footer .flex {
   justify-content: space-between;
@@ -560,12 +526,10 @@ footer .line-footer p a {
   text-align: center;
 }
 
-/* RESPONSIVIDADE DE DISPOSITIVOS MOVEIS */
 .btn-abrir-menu {
-  display: none; /* Oculta o ícone por padrão */
+  display: none;
 }
 
-/* filtragem da parte de projetos na index bb */
 .filtros {
   display: flex;
   gap: 12px;
@@ -573,7 +537,7 @@ footer .line-footer p a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: rgba(17, 24, 39, 0.62);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   max-width: 720px;
@@ -589,12 +553,12 @@ footer .line-footer p a {
   cursor: pointer;
 }
 .badge {
-  background: linear-gradient(135deg, #facc15, #fb7185);
+  background: var(--primary);
   border-radius: 999px;
-  color: #111827;
+  color: #fff;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   padding: 6px 10px;
   position: absolute;
   right: 16px;
@@ -619,9 +583,8 @@ footer .line-footer p a {
 }
 
 @media screen and (max-width: 1020px) {
-  /* classes gerais */
   .btn-abrir-menu {
-    display: block; /* Mostra o ícone apenas em telas menores que 1020px */
+    display: block;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -637,7 +600,6 @@ footer .line-footer p a {
     font-size: 34px;
     line-height: 30px;
   }
-  /* CABEÇALHO */
   .menu-desktop,
   header .btn-contato {
     display: none;
@@ -645,7 +607,6 @@ footer .line-footer p a {
   section.topo-do-site {
     padding: 20px 8%;
   }
-  /* TOPO DO SITE */
   .topo-do-site h1 {
     font-size: 28px;
     line-height: 1.15;
@@ -656,7 +617,6 @@ footer .line-footer p a {
   .topo-do-site .img-topo-site img {
     width: 100%;
   }
-  /* Estilos da especialidades */
   section.especialidades {
     padding: 40px 8%;
   }
@@ -664,7 +624,6 @@ footer .line-footer p a {
     gap: 30px;
     flex-wrap: wrap;
   }
-  /* SOBRE */
   section.sobre {
     padding: 80px 8%;
   }
@@ -675,7 +634,6 @@ footer .line-footer p a {
     font-size: 32px;
     line-height: 30px;
   }
-  /* CONTATO */
   section.formulario {
     padding: 80px 8%;
   }
