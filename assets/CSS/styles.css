@@ -29,24 +29,20 @@ body {
   border-radius: 999px;
   padding: 6px 14px;
   display: flex;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-
+  width: fit-content;
+  max-width: min(100%, 520px);
+  margin: 0 auto 28px;
   justify-content: center;
   align-items: center;
-
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--accent);
   gap: 5px;
-
-  z-index: 999;
 }
 
 .dinamico {
   border-right: 4px solid #fff;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -586,6 +582,12 @@ footer .line-footer p a {
 }
 
 @media screen and (max-width: 1020px) {
+  .barra {
+    margin: 56px auto 24px;
+    max-width: calc(100vw - 88px);
+    font-size: 14px;
+  }
+
   .btn-abrir-menu {
     display: block;
     position: fixed;
