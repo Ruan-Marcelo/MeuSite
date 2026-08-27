@@ -54,10 +54,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -73,13 +70,13 @@
         <span class="dinamico"></span>
       </div>
       <div class="interface container-xxl d-flex align-items-center justify-content-between">
-        <div class="logo">
+        <div class="logo d-flex align-items-center">
           <a href="/" aria-label="Página inicial de Ruan Marcelo">
             <span class="brand-logo">Ruan Marcelo</span>
           </a>
         </div>
         <nav class="menu-desktop">
-          <ul>
+          <ul class="list-unstyled d-flex align-items-center mb-0">
             <li><a href="#Especialidades">Especialidades</a></li>
             <li><a href="#Sobre">Sobre mim</a></li>
             <li><a href="#Projetos">Projetos</a></li>
@@ -88,7 +85,7 @@
             </li>
           </ul>
         </nav>
-        <div class="btn-contato">
+        <div class="btn-contato d-flex align-items-center">
           <a href="#Contato">
             <button class="btn site-btn">Contato</button>
           </a>
@@ -99,11 +96,11 @@
       </div>
 
       <div class="menu-mobile" id="menu-mobile">
-        <div class="btn-fechar">
+        <div class="btn-fechar d-flex justify-content-end">
           <i class="bi bi-x-lg"></i>
         </div>
         <nav>
-          <ul>
+          <ul class="list-unstyled mb-0">
             <li><a href="#Especialidades">Especialidades</a></li>
             <li><a href="#Sobre">Sobre mim</a></li>
             <li><a href="#Contato">Contato</a></li>
@@ -121,7 +118,7 @@
       <section class="topo-do-site">
         <div class="interface container-xxl">
           <div class="flex d-flex">
-            <div class="txt-topo-site">
+            <div class="txt-topo-site col-12">
               <h1>
                 <span>RUAN MARCELO</span><br />
                 Full Stack Developer
@@ -147,7 +144,7 @@
           <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
 
           <div class="flex d-flex">
-            <div class="especialidades-box">
+            <div class="especialidades-box card h-100">
               <i class="bi bi-code-slash"></i>
               <h3>Full Stack Development</h3>
               <p>
@@ -157,7 +154,7 @@
               </p>
             </div>
 
-            <div class="especialidades-box">
+            <div class="especialidades-box card h-100">
               <i class="bi bi-server"></i>
               <h3>Backend & APIs</h3>
               <p>
@@ -167,7 +164,7 @@
               </p>
             </div>
 
-            <div class="especialidades-box">
+            <div class="especialidades-box card h-100">
               <i class="bi bi-window"></i>
               <h3>Frontend Moderno</h3>
               <p>
@@ -183,7 +180,7 @@
       <section id="Sobre" class="sobre">
         <div class="interface container-xxl">
           <div class="flex d-flex">
-            <div class="txt-sobre">
+            <div class="txt-sobre col-12">
               <h2>MUITO PRAZER,<span>SOU RUAN MARCELO.</span></h2>
               <p>
                 Meu nome é Ruan Marcelo Ramacioti Luz, tenho 18 anos, nasci e
@@ -196,7 +193,7 @@
                 código. Este portfólio reúne projetos que mostram essa evolução
                 na prática.
               </p>
-              <div class="btn-social">
+              <div class="btn-social d-flex">
                 <a
                   href="https://www.instagram.com/ruan.luzzz/"
                   target="_blank"
@@ -313,7 +310,7 @@
             ></textarea>
 
             <div class="btn-enviar">
-              <input class="btn site-btn" type="submit" value="ENVIAR" />
+              <input class="btn site-btn w-100" type="submit" value="ENVIAR" />
             </div>
           </form>
           <div id="toast" class="toast">
@@ -326,10 +323,10 @@
       <div class="interface container-xxl">
         <div class="line-footer">
           <div class="flex d-flex">
-            <div class="logo-footer">
+            <div class="logo-footer d-flex align-items-center">
               <span class="brand-logo">Ruan Marcelo</span>
             </div>
-            <div class="btn-social">
+            <div class="btn-social d-flex">
               <a
                 href="https://www.instagram.com/ruan.luzzz/"
                 target="_blank"
@@ -408,6 +405,7 @@
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./assets/JS/menu.js" defer></script>
   </body>
 </html>

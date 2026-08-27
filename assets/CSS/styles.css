@@ -131,9 +131,6 @@ header nav.menu-desktop a:hover {
   color: #fff;
   transform: scale(1.2);
 }
-header nav ul {
-  list-style-type: none;
-}
 header nav.menu-desktop ul li {
   display: inline-block;
   padding: 0 40px;
@@ -419,7 +416,6 @@ section.sobre .flex {
   line-height: 1.7;
 }
 .btn-social {
-  display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
@@ -460,9 +456,7 @@ section.formulario {
 form {
   max-width: 500px;
   margin: 0 auto;
-  display: flex;
   justify-content: center;
-  flex-direction: column;
   gap: 10px;
   margin-top: 40px;
 }

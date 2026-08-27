@@ -22,10 +22,7 @@
       href="https://static.thenounproject.com/png/34322-200.png"
     />
     <link rel="canonical" href="https://zruanzito.com.br/consumoDeAPI.html" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
@@ -245,7 +242,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="d-flex justify-content-between">
       <h1>GitHub Dashboard</h1>
 
       <a href="./index.html">Voltar ao portfólio</a>
@@ -262,30 +259,30 @@
     <div id="userInfo" class="user d-flex align-items-center"></div>
 
     <div class="dashboard">
-      <div class="card" id="analysis"></div>
+      <div class="card h-100" id="analysis"></div>
 
-      <div class="card">
+      <div class="card h-100">
         <h3>Developer Score</h3>
 
         <p id="score"></p>
       </div>
 
-      <div class="card">
+      <div class="card h-100">
         <canvas id="langChart"></canvas>
       </div>
 
-      <div class="card">
+      <div class="card h-100">
         <canvas id="starsChart"></canvas>
       </div>
 
-      <div class="card">
+      <div class="card h-100">
         <h3>Heatmap de Commits</h3>
 
         <div id="heatmap"></div>
       </div>
     </div>
 
-    <ul id="repos"></ul>
+    <ul class="list-unstyled" id="repos"></ul>
 
     <script>
 
@@ -507,7 +504,7 @@
 
         recentCommits.forEach((commit) => {
           const item = document.createElement("div");
-          item.className = "commit-item";
+          item.className = "commit-item d-grid";
 
           const title = document.createElement("strong");
           title.textContent = commit.message.split("\n")[0];
@@ -547,7 +544,7 @@
 
           const li = document.createElement("li");
 
-          li.classList.add("repo");
+          li.classList.add("repo", "card", "h-100");
 
           li.innerHTML = `
 
@@ -672,5 +669,6 @@ Possui ${repos.length} repositórios e ${stars} estrelas acumuladas.`;
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
