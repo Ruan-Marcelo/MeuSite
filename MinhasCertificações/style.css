@@ -18,11 +18,6 @@ header {
   min-height: 48px;
 }
 
-header > .interface {
-  align-items: center;
-  justify-content: space-between;
-}
-
 header a {
   color: #cbd5e1;
   text-decoration: none;
@@ -30,13 +25,11 @@ header a {
 }
 
 header nav ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 header nav.menu-desktop ul li {
-  display: inline-block;
   padding: 0 22px;
 }
 
@@ -174,10 +167,8 @@ header nav.menu-desktop a:hover {
 }
 
 .section-heading {
-  align-items: center;
   border-bottom: 1px solid rgba(148, 163, 184, 0.16);
   gap: 18px;
-  justify-content: space-between;
   margin-bottom: 26px;
   padding-bottom: 18px;
 }
@@ -290,8 +281,6 @@ header nav.menu-desktop a:hover {
 }
 
 .cert-meta {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -316,13 +305,6 @@ header nav.menu-desktop a:hover {
   color: #cbd5e1;
   grid-column: 1 / -1;
   text-align: center;
-}
-
-.btn-social {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 @media (max-width: 900px) {

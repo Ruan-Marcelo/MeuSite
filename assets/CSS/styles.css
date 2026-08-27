@@ -71,11 +71,6 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-.img-responsive {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-}
 .interface {
   max-width: 1280px;
   margin: 0 auto;
@@ -132,7 +127,6 @@ header nav.menu-desktop a:hover {
   transform: scale(1.2);
 }
 header nav.menu-desktop ul li {
-  display: inline-block;
   padding: 0 40px;
 }
 .btn-abrir-menu i {
@@ -216,27 +210,6 @@ section.topo-do-site .flex {
   max-width: 760px;
 }
 
-.topo-do-site .img-topo-site img {
-  position: relative;
-}
-
-.btn-veja {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 25px;
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  letter-spacing: 0;
-  transition: 0.3s;
-}
-.btn-veja:hover {
-  background: var(--primary-strong);
-  transform: translateY(-3px);
-  box-shadow: none;
-}
 section.especialidades {
   padding: 40px 4%;
 }
@@ -567,18 +540,6 @@ footer .line-footer p a {
   text-align: center;
   width: 100%;
 }
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 @media screen and (max-width: 1020px) {
   .barra {
     top: 76px;
@@ -616,9 +577,6 @@ footer .line-footer p a {
   }
   section.topo-do-site .flex {
     gap: 40px;
-  }
-  .topo-do-site .img-topo-site img {
-    width: 100%;
   }
   section.especialidades {
     padding: 40px 8%;
