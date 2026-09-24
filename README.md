@@ -7,7 +7,6 @@ Site estático publicado em `zruanzito.com.br` para reunir projetos, certificaç
 - `index.html`: página principal do portfólio.
 - `consumoDeAPI.html`: dashboard que consulta a API pública do GitHub.
 - `MinhasCertificações/`: lista de cursos e certificações.
-- `TelaDeAvaliação/`: tela simples de avaliação visual do site.
 
 ## Tecnologias
 
