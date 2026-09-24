@@ -110,7 +110,8 @@ form .btn-enviar input:hover,
   color: #fff;
 }
 
-header {
+header,
+header.site-navbar {
   padding: 40px 4% 92px;
 }
 header a {
@@ -154,9 +155,8 @@ header nav.menu-desktop ul li {
   overflow: hidden;
   transition: 0.5s;
 }
-.menu-mobile.abrir-menu {
+.offcanvas.menu-mobile {
   width: 70%;
-  cursor: pointer;
 }
 .menu-mobile.abrir-menu ~ .overley-menu {
   display: block;
@@ -244,6 +244,7 @@ section.especialidades {
   padding: 40px 4%;
 }
 section.especialidades .flex {
+  align-items: stretch;
   gap: 60px;
 }
 .especialidades .especialidades-box {
@@ -284,18 +285,9 @@ section.especialidades .flex {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 330px;
+  height: 390px;
 }
 
-.projeto-card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  top: 0;
-  left: 0;
-  background: var(--primary);
-}
 
 .projeto-card:hover {
   transform: translateY(-6px);
@@ -530,7 +522,11 @@ footer .line-footer p a {
 }
 
 .btn-abrir-menu {
+  background: transparent;
+  border: 0;
   display: none;
+  line-height: 1;
+  padding: 0;
 }
 
 .filtros {
