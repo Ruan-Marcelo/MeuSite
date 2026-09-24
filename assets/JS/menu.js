@@ -1,20 +1,3 @@
-const btnMenu = document.getElementById("btn-menu");
-const menu = document.getElementById("menu-mobile");
-const overlay = document.getElementById("overley-menu");
-
-function fecharMenu() {
-  menu?.classList.remove("abrir-menu");
-  if (overlay) overlay.style.display = "none";
-}
-
-btnMenu?.addEventListener("click", () => {
-  menu?.classList.add("abrir-menu");
-  if (overlay) overlay.style.display = "block";
-});
-
-menu?.addEventListener("click", fecharMenu);
-overlay?.addEventListener("click", fecharMenu);
-
 const textos = [
   "Desenvolvedor Full-Stack",
   "Desenvolvedor Back-end",
@@ -175,7 +158,7 @@ function renderizar(lista) {
 
   lista.forEach((proj) => {
     const card = document.createElement("div");
-    card.classList.add("projeto-card", "card", "h-100");
+    card.classList.add("projeto-card", "card");
 
     if (proj.destaque) {
       const badge = document.createElement("span");
