@@ -1,30 +1,9 @@
-const btnMenu = document.getElementById("btn-menu");
-const menu = document.getElementById("menu-mobile");
-const overlay = document.getElementById("overley-menu");
-const btnFechar = document.querySelector(".menu-mobile .btn-fechar");
 const container = document.getElementById("certifications-container");
 const filtroInstituicao = document.getElementById("filtro-instituicao");
 const totalCertificacoes = document.getElementById("total-certificacoes");
 const totalInstituicoes = document.getElementById("total-instituicoes");
 
 let certificacoes = [];
-
-function fecharMenu() {
-  menu?.classList.remove("abrir-menu");
-  if (overlay) overlay.style.display = "none";
-}
-
-btnMenu?.addEventListener("click", () => {
-  menu?.classList.add("abrir-menu");
-  if (overlay) overlay.style.display = "block";
-});
-
-btnFechar?.addEventListener("click", fecharMenu);
-overlay?.addEventListener("click", fecharMenu);
-
-document.querySelectorAll(".menu-mobile nav ul li a").forEach((link) => {
-  link.addEventListener("click", fecharMenu);
-});
 
 function preencherResumo(data) {
   const instituicoes = new Set(data.map((cert) => cert.instituicao));
