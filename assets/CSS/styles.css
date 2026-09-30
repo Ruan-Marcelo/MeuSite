@@ -122,6 +122,7 @@ header a {
   line-height: 1;
   text-transform: uppercase;
 }
+
 header nav.menu-desktop a:hover {
   color: #fff;
   transform: scale(1.2);
@@ -214,6 +215,7 @@ section.especialidades {
   padding: 40px 4%;
 }
 section.especialidades .flex {
+  align-items: stretch;
   gap: 60px;
 }
 .especialidades .especialidades-box {
@@ -225,6 +227,8 @@ section.especialidades .flex {
   margin-top: 45px;
   transition: 0.2s;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .especialidades .especialidades-box:hover {
@@ -338,10 +342,10 @@ section.especialidades .flex {
   color: #fff;
 }
 .portifolio .flex {
+  align-items: stretch;
   gap: 22px;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: stretch;
 }
 .portfolio-heading {
   margin: 0 auto 26px;
@@ -458,10 +462,10 @@ form .btn-enviar {
   text-align: center;
 }
 form .btn-enviar input[type="submit"] {
-  width: 120px;
   background: var(--primary);
   color: #fff;
   font-weight: 700;
+  min-width: 140px;
   cursor: pointer;
   transition: 0.2s;
 }
