@@ -214,18 +214,8 @@ header nav.menu-desktop a:hover {
   transition: 0.25s;
 }
 
-.cert-card::before {
-  background: #7c3aed;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 3px;
-}
 
 .cert-card:hover {
-  border-color: rgba(168, 85, 247, 0.54);
   transform: translateY(-6px);
 }
 
@@ -340,6 +330,7 @@ header nav.menu-desktop a:hover {
     flex-direction: column;
     text-align: center;
   }
+
 }
 
 @media (max-width: 560px) {
