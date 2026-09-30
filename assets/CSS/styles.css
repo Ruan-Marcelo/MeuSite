@@ -78,7 +78,7 @@ body {
 }
 .btn-contato button,
 .site-btn {
-  padding: 10px 40px;
+  padding: 10px 28px;
   font-size: 18px;
   font-weight: 600;
   background: var(--primary);
@@ -87,6 +87,7 @@ body {
   cursor: pointer;
   transition: 0.2s;
   color: #fff;
+  white-space: nowrap;
 }
 h2.titulo {
   color: var(--text);
@@ -130,7 +131,7 @@ header nav.menu-desktop a:hover {
   transform: scale(1.2);
 }
 header nav.menu-desktop ul li {
-  padding: 0 40px;
+  padding: 0 24px;
 }
 .btn-abrir-menu i {
   color: var(--accent);
