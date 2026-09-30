@@ -622,7 +622,7 @@ footer .line-footer p a {
 
 .spotify-float {
   bottom: 20px;
-  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.35);
+  box-shadow: none;
   font-size: 28px;
   height: 58px;
   position: fixed;

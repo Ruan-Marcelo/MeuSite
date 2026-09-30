@@ -229,8 +229,6 @@ function renderizar(lista) {
 renderizar(projetos);
 
 const spotifyTracks = document.getElementById("spotify-tracks");
-const spotifyArtists = document.getElementById("spotify-artists");
-const spotifyNow = document.getElementById("spotify-now");
 const spotifyPopup = document.getElementById("spotify-popup");
 const spotifyClose = document.getElementById("spotify-close");
 const spotifyOpen = document.getElementById("spotify-open");
@@ -278,23 +276,6 @@ function criarItemSpotify(item, subtitle) {
 
 function renderizarSpotify(data) {
   const tracks = data.tracks || [];
-  const artists = data.artists || [];
-  const currentlyPlaying = data.currently_playing;
-
-  if (spotifyNow) {
-    spotifyNow.innerHTML = "";
-
-    if (currentlyPlaying) {
-      spotifyNow.appendChild(
-        criarItemSpotify(
-          currentlyPlaying,
-          (currentlyPlaying.artists || []).join(", ")
-        )
-      );
-    } else {
-      spotifyFallback(spotifyNow, "Nada tocando agora.");
-    }
-  }
 
   if (spotifyTracks) {
     spotifyTracks.innerHTML = "";
@@ -308,19 +289,6 @@ function renderizarSpotify(data) {
       spotifyFallback(spotifyTracks, "Configure o Spotify no GitHub Actions.");
     }
   }
-
-  if (spotifyArtists) {
-    spotifyArtists.innerHTML = "";
-    artists.slice(0, 5).forEach((artist) => {
-      spotifyArtists.appendChild(
-        criarItemSpotify(artist, (artist.genres || []).join(", ") || "Artista")
-      );
-    });
-
-    if (!artists.length) {
-      spotifyFallback(spotifyArtists, "Configure o Spotify no GitHub Actions.");
-    }
-  }
 }
 
 fetch("data/spotify.json")
@@ -330,7 +298,5 @@ fetch("data/spotify.json")
   })
   .then(renderizarSpotify)
   .catch(() => {
-    spotifyFallback(spotifyNow, "Nao foi possivel carregar o Spotify.");
     spotifyFallback(spotifyTracks, "Nao foi possivel carregar o Spotify.");
-    spotifyFallback(spotifyArtists, "Nao foi possivel carregar o Spotify.");
   });
