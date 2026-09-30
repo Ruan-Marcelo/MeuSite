@@ -230,6 +230,19 @@ renderizar(projetos);
 
 const spotifyTracks = document.getElementById("spotify-tracks");
 const spotifyArtists = document.getElementById("spotify-artists");
+const spotifyPopup = document.getElementById("spotify-popup");
+const spotifyClose = document.getElementById("spotify-close");
+const spotifyOpen = document.getElementById("spotify-open");
+
+spotifyClose?.addEventListener("click", () => {
+  spotifyPopup?.classList.add("is-hidden");
+  spotifyOpen?.classList.remove("is-hidden");
+});
+
+spotifyOpen?.addEventListener("click", () => {
+  spotifyPopup?.classList.remove("is-hidden");
+  spotifyOpen?.classList.add("is-hidden");
+});
 
 function spotifyFallback(container, message) {
   if (!container) return;
