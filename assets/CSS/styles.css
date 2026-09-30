@@ -544,6 +544,94 @@ footer .line-footer p a {
   text-align: center;
   width: 100%;
 }
+
+.spotify-section {
+  padding: 80px 4%;
+}
+
+.spotify-heading {
+  margin: 0 auto 28px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.spotify-heading .eyebrow {
+  color: #1ed760;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.spotify-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.spotify-grid > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.spotify-grid h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.spotify-list {
+  display: grid;
+  gap: 12px;
+}
+
+.spotify-item {
+  align-items: center;
+  background: #15101b;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #fff;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 52px 1fr;
+  min-height: 72px;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.spotify-item:hover {
+  border-color: rgba(30, 215, 96, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.spotify-item img {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: cover;
+  width: 52px;
+}
+
+.spotify-item strong,
+.spotify-item span {
+  display: block;
+}
+
+.spotify-item strong {
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.spotify-item span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
 @media screen and (max-width: 1020px) {
   .barra {
     top: 76px;
@@ -601,6 +689,14 @@ footer .line-footer p a {
   }
   section.formulario {
     padding: 80px 8%;
+  }
+
+  .spotify-section {
+    padding: 80px 8%;
+  }
+
+  .spotify-grid {
+    grid-template-columns: 1fr;
   }
   form {
     margin-top: 0px;

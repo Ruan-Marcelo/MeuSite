@@ -227,3 +227,79 @@ function renderizar(lista) {
 }
 
 renderizar(projetos);
+
+const spotifyTracks = document.getElementById("spotify-tracks");
+const spotifyArtists = document.getElementById("spotify-artists");
+
+function spotifyFallback(container, message) {
+  if (!container) return;
+  container.innerHTML = `<p class="sem-resultados">${message}</p>`;
+}
+
+function criarItemSpotify(item, subtitle) {
+  const link = document.createElement("a");
+  link.className = "spotify-item";
+  link.href = item.url || "https://open.spotify.com/";
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  const image = document.createElement("img");
+  image.src = item.image || "imagens/9d34778f-29ef-4e44-8198-cb1f2e1043e6.png";
+  image.alt = "";
+  image.loading = "lazy";
+
+  const content = document.createElement("div");
+
+  const name = document.createElement("strong");
+  name.textContent = item.name;
+
+  const meta = document.createElement("span");
+  meta.textContent = subtitle;
+
+  content.append(name, meta);
+  link.append(image, content);
+
+  return link;
+}
+
+function renderizarSpotify(data) {
+  const tracks = data.tracks || [];
+  const artists = data.artists || [];
+
+  if (spotifyTracks) {
+    spotifyTracks.innerHTML = "";
+    tracks.slice(0, 5).forEach((track) => {
+      spotifyTracks.appendChild(
+        criarItemSpotify(track, (track.artists || []).join(", "))
+      );
+    });
+
+    if (!tracks.length) {
+      spotifyFallback(spotifyTracks, "Configure o Spotify no GitHub Actions.");
+    }
+  }
+
+  if (spotifyArtists) {
+    spotifyArtists.innerHTML = "";
+    artists.slice(0, 5).forEach((artist) => {
+      spotifyArtists.appendChild(
+        criarItemSpotify(artist, (artist.genres || []).join(", ") || "Artista")
+      );
+    });
+
+    if (!artists.length) {
+      spotifyFallback(spotifyArtists, "Configure o Spotify no GitHub Actions.");
+    }
+  }
+}
+
+fetch("data/spotify.json")
+  .then((res) => {
+    if (!res.ok) throw new Error("Erro ao carregar Spotify");
+    return res.json();
+  })
+  .then(renderizarSpotify)
+  .catch(() => {
+    spotifyFallback(spotifyTracks, "Nao foi possivel carregar o Spotify.");
+    spotifyFallback(spotifyArtists, "Nao foi possivel carregar o Spotify.");
+  });
