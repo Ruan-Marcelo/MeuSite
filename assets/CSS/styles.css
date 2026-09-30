@@ -206,7 +206,7 @@ section.topo-do-site .flex {
 
 .hero-name {
   display: block;
-  max-width: min(760px, 100%);
+  max-width: min(520px, 100%);
   width: 100%;
 }
 
@@ -227,18 +227,17 @@ section.topo-do-site .flex {
 .hero-name-stroke {
   animation: draw-name 3.6s ease-in-out infinite alternate;
   fill: transparent;
-  stroke: var(--accent);
+  stroke: #fff;
   stroke-dasharray: 1100;
   stroke-dashoffset: 1100;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2.4px;
+  stroke-width: 1.8px;
 }
 
 .hero-name-fill {
-  animation: fill-name 3.6s ease-in-out infinite alternate;
   fill: var(--accent);
-  opacity: 0;
+  opacity: 1;
 }
 
 @keyframes draw-name {
@@ -246,17 +245,6 @@ section.topo-do-site .flex {
     stroke-dashoffset: 0;
   }
 }
-
-@keyframes fill-name {
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 .topo-do-site .txt-topo-site p {
   color: var(--muted);
   margin: 40px 0;
