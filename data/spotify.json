@@ -1,7 +1,171 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-09-30T22:34:54.627704+00:00",
   "time_range": "medium_term",
   "currently_playing": null,
-  "tracks": [],
-  "artists": []
+  "tracks": [
+    {
+      "name": "Sinceramente",
+      "artists": [
+        "Sotam",
+        "Rob",
+        "Vertigo"
+      ],
+      "url": "https://open.spotify.com/track/01dNJ795LjHNFLtScNmjln",
+      "image": "https://i.scdn.co/image/ab67616d0000b273e6e501587e56bb2730b6cb4a"
+    },
+    {
+      "name": "Por Supuesto",
+      "artists": [
+        "Marina Sena"
+      ],
+      "url": "https://open.spotify.com/track/6FKfZNVgfSS2IBxiAqwSCr",
+      "image": "https://i.scdn.co/image/ab67616d0000b273df9061e88d3137f7970bb117"
+    },
+    {
+      "name": "CONFISSÕES PT1",
+      "artists": [
+        "Nagalli",
+        "Menor MC",
+        "Dfideliz",
+        "CJota",
+        "Leviano",
+        "Supernova Ent"
+      ],
+      "url": "https://open.spotify.com/track/4OMSfAavn8k6HxZ0HwVtV1",
+      "image": "https://i.scdn.co/image/ab67616d0000b2734b5ceb2515a32f3115323ae8"
+    },
+    {
+      "name": "Invisível pt.2",
+      "artists": [
+        "Veigh",
+        "Supernova Ent",
+        "Honaiser",
+        "Toledo",
+        "Nagalli",
+        "Bvga Beatz"
+      ],
+      "url": "https://open.spotify.com/track/2PsrJc45N7xbFo2ZrL4bHD",
+      "image": "https://i.scdn.co/image/ab67616d0000b273aea5a558ec286e3554eb377e"
+    },
+    {
+      "name": "Bloco dos Apaixonados",
+      "artists": [
+        "Sotam",
+        "Carla Sol",
+        "Rob",
+        "Pulim"
+      ],
+      "url": "https://open.spotify.com/track/68xXgMubo2U5MEGCtJFxzC",
+      "image": "https://i.scdn.co/image/ab67616d0000b273ad4a0699e444c24c35448e13"
+    },
+    {
+      "name": "Cacos De Vidro (sample: Esperar pra Ver)",
+      "artists": [
+        "BK",
+        "Kolo",
+        "Evinha"
+      ],
+      "url": "https://open.spotify.com/track/7hgKeJgEQyjl6JcpudzvzU",
+      "image": "https://i.scdn.co/image/ab67616d0000b273327481999129daa293cd68b9"
+    },
+    {
+      "name": "Só Uma Noite",
+      "artists": [
+        "Fabio Brazza",
+        "Péricles"
+      ],
+      "url": "https://open.spotify.com/track/2JbC87EgF2n4uTViIy6b5H",
+      "image": "https://i.scdn.co/image/ab67616d0000b2734b5dc40bac409a1dc9942a35"
+    },
+    {
+      "name": "Ilusão De Ótica - Ao Vivo",
+      "artists": [
+        "Matheus & Kauan",
+        "Ana Castela"
+      ],
+      "url": "https://open.spotify.com/track/44CTudFZ0kbaIF9n0jk7oU",
+      "image": "https://i.scdn.co/image/ab67616d0000b273525edab604386ce3fce89cc5"
+    },
+    {
+      "name": "Babydoll",
+      "artists": [
+        "Dominic Fike"
+      ],
+      "url": "https://open.spotify.com/track/7yNf9YjeO5JXUE3JEBgnYc",
+      "image": "https://i.scdn.co/image/ab67616d0000b2737b1b6f41c1645af9757d5616"
+    },
+    {
+      "name": "Mandona (Se eu te dissesse)",
+      "artists": [
+        "Vulgo FK",
+        "Kyan",
+        "Bvga Beatz",
+        "Toledo"
+      ],
+      "url": "https://open.spotify.com/track/0yZRkiCSy4ra9EykuYyGo0",
+      "image": "https://i.scdn.co/image/ab67616d0000b273ba6c5d864a153fe2f2d37bfc"
+    }
+  ],
+  "artists": [
+    {
+      "name": "Sotam",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/0xKbHuoAoxvPu5uGax4d9l",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb56222c6bbfe8e21a8fdea192"
+    },
+    {
+      "name": "Mc IG",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/2q9wk5fkeU2C9CgCKdh4AN",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb3ad13d28eee1e6d4c5283d93"
+    },
+    {
+      "name": "Jorge & Mateus",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/1elUiq4X7pxej6FRlrEzjM",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb70da8de30884eb39551c3673"
+    },
+    {
+      "name": "Veigh",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/4YqwRbMLqGHRHLS1w2ZKse",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebfe8a6cb29ef8acc97e6bb3b1"
+    },
+    {
+      "name": "Matuê",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/5nP8x4uEFjAAmDzwOEc9b8",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb383a90d1849dfb7f0c11d809"
+    },
+    {
+      "name": "BK",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/1YOVBTvznjiDvtAj4ExHeo",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb0174a39f64d6da8dc3d821e7"
+    },
+    {
+      "name": "MC Hariel",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/0pcoadNMmvrUyab1RxWBoV",
+      "image": "https://i.scdn.co/image/ab6761610000e5eb1b36b3329289b33887bfa0b2"
+    },
+    {
+      "name": "Mc Lele JP",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/1mV9h1AwhRXSjBFcYpajgY",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebab3d035db1a0b162676cef82"
+    },
+    {
+      "name": "MC GP",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/5s27i7oqhNWIcE4HeoVdq0",
+      "image": "https://i.scdn.co/image/ab6761610000e5eba9369943764685f88f716427"
+    },
+    {
+      "name": "KayBlack",
+      "genres": [],
+      "url": "https://open.spotify.com/artist/2h5Ha0ZiMFmOQD3iYcSXsy",
+      "image": "https://i.scdn.co/image/ab6761610000e5ebd038235586106a712aa0d73d"
+    }
+  ]
 }
