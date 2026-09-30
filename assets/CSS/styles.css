@@ -203,6 +203,60 @@ section.topo-do-site .flex {
 .topo-do-site .txt-topo-site h1 span {
   color: var(--accent);
 }
+
+.hero-name {
+  display: block;
+  max-width: min(760px, 100%);
+  width: 100%;
+}
+
+.hero-name svg {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.hero-name text {
+  font-family: "Poppins", sans-serif;
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.hero-name-stroke {
+  animation: draw-name 3.6s ease-in-out infinite alternate;
+  fill: transparent;
+  stroke: var(--accent);
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4px;
+}
+
+.hero-name-fill {
+  animation: fill-name 3.6s ease-in-out infinite alternate;
+  fill: var(--accent);
+  opacity: 0;
+}
+
+@keyframes draw-name {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-name {
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .topo-do-site .txt-topo-site p {
   color: var(--muted);
   margin: 40px 0;
