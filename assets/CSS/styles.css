@@ -473,6 +473,7 @@ form .btn-enviar input[type="submit"] {
   color: #fff;
   font-weight: 700;
   min-width: 140px;
+  width: auto;
   cursor: pointer;
   transition: 0.2s;
 }

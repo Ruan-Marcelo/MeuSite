@@ -56,7 +56,7 @@
           </ul>
         </nav>
 
-        <div class="btn-contato d-flex align-items-center">
+        <div class="btn-contato d-flex align-items-center header-contact">
           <a href="../index.html#Contato">
             <button class="btn site-btn">Contato</button>
           </a>
@@ -120,6 +120,49 @@
         </div>
       </section>
     </main>
+
+    <aside class="spotify-popup" id="spotify-popup" aria-label="Mais ouvidos no Spotify">
+      <div class="spotify-popup-header">
+        <div>
+          <p class="eyebrow">Spotify</p>
+          <h2>Meus mais ouvidos</h2>
+        </div>
+        <button class="spotify-close" id="spotify-close" type="button" aria-label="Fechar Spotify">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="spotify-grid">
+        <!--
+        <div class="spotify-now">
+          <h3>Escutando agora</h3>
+          <div class="spotify-list" id="spotify-now">
+            <p class="sem-resultados">Nada tocando agora.</p>
+          </div>
+        </div>
+        -->
+
+        <div class="spotify-top-tracks">
+          <h3>Músicas</h3>
+          <div class="spotify-list" id="spotify-tracks">
+            <p class="sem-resultados">Carregando músicas...</p>
+          </div>
+        </div>
+
+        <!--
+        <div>
+          <h3>Artistas</h3>
+          <div class="spotify-list" id="spotify-artists">
+            <p class="sem-resultados">Carregando artistas...</p>
+          </div>
+        </div>
+        -->
+      </div>
+    </aside>
+
+    <button class="spotify-float is-hidden" id="spotify-open" type="button" aria-label="Abrir Spotify">
+      <i class="bi bi-spotify"></i>
+    </button>
 
     <footer>
       <div class="interface container-xxl">

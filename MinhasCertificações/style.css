@@ -299,7 +299,8 @@ header nav.menu-desktop a:hover {
 
 @media (max-width: 900px) {
   header nav.menu-desktop,
-  header .btn-contato {
+  header .btn-contato,
+  header .header-contact {
     display: none;
   }
 
