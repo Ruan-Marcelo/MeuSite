@@ -9,7 +9,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 
 REDIRECT_URI = "http://127.0.0.1:8888/callback"
-SCOPES = "user-top-read"
+SCOPES = "user-top-read user-read-currently-playing"
 
 
 def require_env(name):

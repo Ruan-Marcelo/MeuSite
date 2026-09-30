@@ -36,6 +36,8 @@ $env:SPOTIFY_CLIENT_SECRET="seu_client_secret"
 python scripts/get_spotify_refresh_token.py
 ```
 
+O token precisa liberar os escopos `user-top-read` e `user-read-currently-playing`.
+
 ## Autor
 
 Ruan Marcelo  

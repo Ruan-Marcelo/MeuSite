@@ -33,6 +33,24 @@ def request_json(url, headers=None, data=None):
         raise
 
 
+def request_json_or_none(url, headers=None):
+    request = urllib.request.Request(url, headers=headers or {})
+
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            if response.status == 204:
+                return None
+
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        if error.code in {204, 403, 404}:
+            return None
+
+        body = error.read().decode("utf-8", errors="replace")
+        print(f"Spotify request failed: {error.code} {body}", file=sys.stderr)
+        raise
+
+
 def get_access_token():
     client_id = require_env("SPOTIFY_CLIENT_ID")
     client_secret = require_env("SPOTIFY_CLIENT_SECRET")
@@ -86,6 +104,27 @@ def simplify_track(track):
     }
 
 
+def get_currently_playing(access_token):
+    data = request_json_or_none(
+        f"{API_BASE}/me/player/currently-playing",
+        headers={"Authorization": f"Bearer {access_token}"},
+    )
+
+    if not data or not data.get("is_playing") or data.get("currently_playing_type") != "track":
+        return None
+
+    item = data.get("item")
+
+    if not item:
+        return None
+
+    track = simplify_track(item)
+    track["progress_ms"] = data.get("progress_ms")
+    track["duration_ms"] = item.get("duration_ms")
+
+    return track
+
+
 def simplify_artist(artist):
     images = artist.get("images", [])
 
@@ -101,10 +140,12 @@ def main():
     access_token = get_access_token()
     tracks = [simplify_track(track) for track in get_top_items(access_token, "tracks")]
     artists = [simplify_artist(artist) for artist in get_top_items(access_token, "artists")]
+    currently_playing = get_currently_playing(access_token)
 
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "time_range": "medium_term",
+        "currently_playing": currently_playing,
         "tracks": tracks,
         "artists": artists,
     }
