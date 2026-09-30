@@ -107,7 +107,7 @@ form .btn-enviar input:hover,
 
 header {
   border-bottom: 1px solid rgba(168, 85, 247, 0.18);
-  padding: 40px 4% 92px;
+  padding: 28px 4%;
 }
 header a {
   color: var(--muted);
@@ -218,7 +218,9 @@ section.especialidades {
 }
 section.especialidades .flex {
   align-items: stretch;
+  display: grid !important;
   gap: 60px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .especialidades .especialidades-box {
   color: var(--text);
@@ -231,7 +233,8 @@ section.especialidades .flex {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 330px;
+  height: 330px;
+  min-width: 0;
 }
 
 .especialidades .especialidades-box:hover {
@@ -249,7 +252,7 @@ section.especialidades .flex {
 
 .projeto-card {
   width: 100%;
-  max-width: 360px;
+  max-width: none;
   background: var(--surface);
   padding: 24px;
   border: 1px solid var(--border);
@@ -261,7 +264,7 @@ section.especialidades .flex {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 380px;
+  height: 390px;
 }
 
 .projeto-card::before {
@@ -347,9 +350,9 @@ section.especialidades .flex {
 }
 .portifolio .flex {
   align-items: stretch;
+  display: grid !important;
   gap: 22px;
-  justify-content: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 .portfolio-heading {
   margin: 0 auto 26px;
@@ -679,7 +682,7 @@ footer .line-footer p a {
   }
   section.especialidades .flex {
     gap: 30px;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
   section.sobre {
     padding: 80px 8%;
@@ -715,10 +718,6 @@ footer .line-footer p a {
   }
 }
 @media (max-width: 600px) {
-  .projeto-card {
-    max-width: 100%;
-  }
-
   .portifolio .flex {
     padding: 0 10px;
   }
