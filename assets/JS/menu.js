@@ -123,7 +123,7 @@ const container = document.getElementById("projects-container");
 const filtroTech = document.getElementById("filtro-tech");
 const ordenacao = document.getElementById("ordenacao");
 
-fetch("projetos.json")
+fetch("data/projetos.json")
   .then((res) => {
     if (!res.ok) throw new Error("Erro ao carregar projetos");
     return res.json();

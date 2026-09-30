@@ -95,7 +95,7 @@ filtroInstituicao?.addEventListener("change", () => {
   renderizarCertificacoes(filtradas);
 });
 
-fetch("certifications.json")
+fetch("../data/certifications.json")
   .then((response) => {
     if (!response.ok) throw new Error("Erro ao carregar certificações");
     return response.json();
