@@ -106,6 +106,7 @@ form .btn-enviar input:hover,
 }
 
 header {
+  border-bottom: 1px solid rgba(168, 85, 247, 0.18);
   padding: 40px 4% 92px;
 }
 header a {
@@ -708,9 +709,6 @@ footer .line-footer p a {
   form textarea {
     padding: 10px 15px;
     font-size: 16px;
-  }
-  form .btn-enviar input[type="submit"] {
-    width: 100%;
   }
   footer .line-footer p {
     text-align: center;
