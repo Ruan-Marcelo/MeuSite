@@ -260,6 +260,28 @@ section.topo-do-site .flex {
   max-width: 620px;
 }
 
+.hero-signature {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 10px;
+  margin-bottom: 26px;
+  padding: 8px 14px 8px 8px;
+}
+
+.hero-signature img {
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  height: 42px;
+  object-fit: cover;
+  width: 42px;
+}
+
 .txt-topo-site {
   max-width: 760px;
 }
