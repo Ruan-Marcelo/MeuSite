@@ -131,7 +131,7 @@ header nav.menu-desktop a:hover {
   transform: scale(1.2);
 }
 header nav.menu-desktop ul li {
-  padding: 0 24px;
+  padding: 0 16px;
 }
 .btn-abrir-menu i {
   color: var(--accent);
@@ -471,6 +471,119 @@ section.sobre .flex {
   text-align: justify;
   color: var(--muted);
   line-height: 1.7;
+}
+
+section.experiencia {
+  padding: 40px 4% 80px;
+}
+
+.experiencia-card,
+.formacao-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  margin: 45px auto 0;
+  max-width: 860px;
+  padding: 28px;
+}
+
+.experiencia-topo {
+  align-items: flex-start;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.experiencia-topo .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.experiencia-topo h3 {
+  color: #fff;
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.experiencia-topo p,
+.experiencia-card > p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.experiencia-topo > span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: #fff;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.experiencia-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.experiencia-tags span {
+  background: #15101b;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: #eadcff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 10px;
+}
+
+section.formacao {
+  padding: 0 4% 80px;
+}
+
+.formacao-topo {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.formacao-topo img {
+  background: #fff;
+  border-radius: 8px;
+  height: 58px;
+  object-fit: contain;
+  padding: 8px;
+  width: 82px;
+}
+
+.formacao-topo .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.formacao-topo h3 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.formacao-topo p,
+.formacao-card > p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 14px;
 }
 .btn-social {
   justify-content: center;
@@ -835,6 +948,24 @@ footer .line-footer p a {
   section.sobre {
     padding: 80px 8%;
   }
+
+  section.experiencia {
+    padding: 40px 8% 80px;
+  }
+
+  section.formacao {
+    padding: 0 8% 80px;
+  }
+
+  .experiencia-topo {
+    flex-direction: column;
+  }
+
+  .formacao-topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   section.sobre .flex {
     gap: 10px;
   }
