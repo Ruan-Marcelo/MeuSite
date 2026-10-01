@@ -227,22 +227,30 @@ section.topo-do-site .flex {
 .hero-name-stroke {
   animation: draw-name 3.6s ease-in-out infinite alternate;
   fill: transparent;
-  stroke: #fff;
+  stroke: var(--accent);
   stroke-dasharray: 1100;
   stroke-dashoffset: 1100;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.8px;
+  stroke-width: 2px;
 }
 
 .hero-name-fill {
+  animation: reveal-name 3.6s ease-in-out infinite alternate;
   fill: var(--accent);
+  clip-path: inset(0 100% 0 0);
   opacity: 1;
 }
 
 @keyframes draw-name {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes reveal-name {
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 .topo-do-site .txt-topo-site p {
